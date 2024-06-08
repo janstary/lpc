@@ -7,18 +7,11 @@
 /*typedef float real;*/
 /* doublereal only used for function arguments to sqrt, exp, etc. */
 typedef double doublereal;
-/* 32 bits seems wasteful, but there really aren't that many logical
- * variables around, and making them 32 bits could avoid word
- * alignment problems, perhaps.  */
 /* The following types are not used in the translated C code for the
  * LPC-10 coder, but they might be needed by the definitions down
  * below, so they don't cause compilation errors.  */
-typedef char *address;
 typedef struct { real r, i; } complex;
 typedef struct { doublereal r, i; } doublecomplex;
-typedef short int shortlogical;
-typedef char logical1;
-/* typedef long long longint; */ /* system-dependent */
 
 #define TRUE_ (1)
 #define FALSE_ (0)
@@ -122,7 +115,6 @@ union Multitype {       /* for multiple entry points */
         char g;
         int16_t h;
         int32_t i;
-        /* longint j; */
         real r;
         doublereal d;
         complex c;
