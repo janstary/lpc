@@ -18,7 +18,6 @@ typedef struct { real r, i; } complex;
 typedef struct { doublereal r, i; } doublecomplex;
 typedef short int shortlogical;
 typedef char logical1;
-typedef char integer1;
 /* typedef long long longint; */ /* system-dependent */
 
 #define TRUE_ (1)
@@ -120,7 +119,7 @@ typedef struct
 #define VOID void
 
 union Multitype {       /* for multiple entry points */
-        integer1 g;
+        char g;
         int16_t h;
         int32_t i;
         /* longint j; */
