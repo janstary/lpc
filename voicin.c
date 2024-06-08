@@ -1,3 +1,5 @@
+#include <math.h>
+
 /*
 
  * Revision 1.2  1996/08/20  20:45:00  jaf
@@ -247,7 +249,6 @@ s*/
 
     /* Builtin functions */
     int32_t i_nint(real *);
-    double sqrt(doublereal);
 
     /* Local variables */
     real ar_b__, ar_f__;

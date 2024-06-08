@@ -5,7 +5,7 @@
 
 #include "f2c.h"
 
-int analys_(real *speech, int32_t *voice, int32_t *pitch, real *rms, real *rc, struct lpc10_encoder_state *st);
+int analys_(float *speech, int32_t *voice, int32_t *pitch, float *rms, float *rc, struct lpc10_encoder_state *st);
 
 /* Common Block Declarations */
 
@@ -123,8 +123,8 @@ static int32_t c__1 = 1;
 /* This entry has no local state.  It accesses a "constant" array */
 /* declared in ANALYS. */
 
-/* Subroutine */ int analys_(real *speech, int32_t *voice, int32_t 
-	*pitch, real *rms, real *rc, struct lpc10_encoder_state *st)
+/* Subroutine */ int analys_(float *speech, int32_t *voice, int32_t 
+	*pitch, float *rms, float *rc, struct lpc10_encoder_state *st)
 {
     /* Initialized data */
 
@@ -133,55 +133,55 @@ static int32_t c__1 = 1;
 	    74,76,78,80,84,88,92,96,100,104,108,112,116,120,124,128,132,136,
 	    140,144,148,152,156 };
     static int32_t buflim[4] = { 181,720,25,720 };
-    static real precoef = .9375f;
+    static float precoef = .9375f;
 
     /* System generated locals */
     int32_t i__1;
 
     /* Local variables */
-    real amdf[60];
+    float amdf[60];
     int32_t half;
-    real abuf[156];
-    real *bias;
-    extern /* Subroutine */ int tbdm_(real *, int32_t *, int32_t *, int32_t *,
-	     real *, int32_t *, int32_t *, int32_t *);
+    float abuf[156];
+    float *bias;
+    extern /* Subroutine */ int tbdm_(float *, int32_t *, int32_t *, int32_t *,
+	     float *, int32_t *, int32_t *, int32_t *);
     int32_t *awin;
     int32_t midx, ewin[6]	/* was [2][3] */;
-    real ivrc[2], temp;
-    real *zpre;
+    float ivrc[2], temp;
+    float *zpre;
     int32_t *vwin;
     int32_t i__, j, lanal;
-    extern /* Subroutine */ int rcchk_(int32_t *, real *, real *), mload_(
-	    int32_t *, int32_t *, int32_t *, real *, real *, real *);
-    real *inbuf, *pebuf;
-    real *lpbuf, *ivbuf;
-    real *rcbuf;
+    extern /* Subroutine */ int rcchk_(int32_t *, float *, float *), mload_(
+	    int32_t *, int32_t *, int32_t *, float *, float *, float *);
+    float *inbuf, *pebuf;
+    float *lpbuf, *ivbuf;
+    float *rcbuf;
     int32_t *osbuf;
-    extern /* Subroutine */ int onset_(real *, int32_t *, int32_t *, int32_t *
+    extern /* Subroutine */ int onset_(float *, int32_t *, int32_t *, int32_t *
 	    , int32_t *, int32_t *, int32_t *, struct lpc10_encoder_state *);
     int32_t *osptr;
     extern int placea_(int32_t *, int32_t *
 	    , int32_t *, int32_t *, int32_t *, int32_t *, int32_t *, int32_t *
-	    , int32_t *), dcbias_(int32_t *, real *, real *), placev_(int32_t 
+	    , int32_t *), dcbias_(int32_t *, float *, float *), placev_(int32_t 
 	    *, int32_t *, int32_t *, int32_t *, int32_t *, int32_t *, int32_t 
 	    *, int32_t *, int32_t *, int32_t *, int32_t *);
     int32_t ipitch;
     int32_t *obound;
-    extern /* Subroutine */ int preemp_(real *, real *, int32_t *, real *, 
-	    real *), voicin_(int32_t *, real *, real *, int32_t *, int32_t *, 
-	    real *, real *, int32_t *, real *, int32_t *, int32_t *, int32_t *,
+    extern /* Subroutine */ int preemp_(float *, float *, int32_t *, float *, 
+	    float *), voicin_(int32_t *, float *, float *, int32_t *, int32_t *, 
+	    float *, float *, int32_t *, float *, int32_t *, int32_t *, int32_t *,
 	    struct lpc10_encoder_state *);
     int32_t *voibuf;
     int32_t mintau;
-    real *rmsbuf;
-    extern /* Subroutine */ int lpfilt_(real *, real *, int32_t *, int32_t *),
-	     ivfilt_(real *, real *, int32_t *, int32_t *, real *), energy_(
-	    int32_t *, real *, real *), invert_(int32_t *, real *, real *, 
-	    real *);
+    float *rmsbuf;
+    extern /* Subroutine */ int lpfilt_(float *, float *, int32_t *, int32_t *),
+	     ivfilt_(float *, float *, int32_t *, int32_t *, float *), energy_(
+	    int32_t *, float *, float *), invert_(int32_t *, float *, float *, 
+	    float *);
     int32_t minptr, maxptr;
-    extern /* Subroutine */ int dyptrk_(real *, int32_t *, int32_t *, int32_t 
+    extern /* Subroutine */ int dyptrk_(float *, int32_t *, int32_t *, int32_t 
 	    *, int32_t *, int32_t *, struct lpc10_encoder_state *);
-    real phi[100]	/* was [10][10] */, psi[10];
+    float phi[100]	/* was [10][10] */, psi[10];
 
 /*   LPC Processing control variables: */
 
@@ -393,10 +393,10 @@ n */
 		(*bias);
 	temp += inbuf[720 - contrl_1.lframe + i__ - 181];
     }
-    if (temp > (real) contrl_1.lframe) {
+    if (temp > (float) contrl_1.lframe) {
 	*bias += 1;
     }
-    if (temp < (real) (-contrl_1.lframe)) {
+    if (temp < (float) (-contrl_1.lframe)) {
 	*bias += -1;
     }
 /*   Place Voicing Window */

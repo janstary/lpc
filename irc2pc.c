@@ -1,3 +1,5 @@
+#include <math.h>
+
 /*
 
  * Revision 1.1  1996/08/19  22:31:56  jaf
@@ -57,9 +59,6 @@ extern int irc2pc_(real *rc, real *pc, int32_t *order, real *gprime, real *g2pas
 {
     /* System generated locals */
     int32_t i__1, i__2;
-
-    /* Builtin functions */
-    double sqrt(doublereal);
 
     /* Local variables */
     real temp[10];

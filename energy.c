@@ -1,3 +1,5 @@
+#include <math.h>
+
 /*
 
  * Revision 1.1  1996/08/19  22:32:17  jaf
@@ -52,9 +54,6 @@ extern int energy_(int32_t *len, real *speech, real *rms);
 {
     /* System generated locals */
     int32_t i__1;
-
-    /* Builtin functions */
-    double sqrt(doublereal);
 
     /* Local variables */
     int32_t i__;

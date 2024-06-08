@@ -1,3 +1,5 @@
+#include <math.h>
+
 /*
 
  * Revision 1.2  1996/08/20  20:40:12  jaf
@@ -109,9 +111,6 @@ extern int pitsyn_(int32_t *order, int32_t *voice, int32_t *pitch, real *rms, re
     /* System generated locals */
     int32_t rci_dim1 = 0, rci_offset, i__1, i__2;
     real r__1;
-
-    /* Builtin functions */
-    double log(doublereal), exp(doublereal);
 
     /* Local variables */
     real alrn, alro, yarc[10], prop;

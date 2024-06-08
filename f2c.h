@@ -4,14 +4,11 @@
 #include "lpc10.h"
 
 /*typedef short int shortint;*/
-/*typedef float real;*/
-/* doublereal only used for function arguments to sqrt, exp, etc. */
-typedef double doublereal;
 /* The following types are not used in the translated C code for the
  * LPC-10 coder, but they might be needed by the definitions down
  * below, so they don't cause compilation errors.  */
-typedef struct { real r, i; } complex;
-typedef struct { doublereal r, i; } doublecomplex;
+typedef struct { float r, i; } complex;
+typedef struct { double r, i; } doublecomplex;
 
 #define TRUE_ (1)
 #define FALSE_ (0)
@@ -115,8 +112,8 @@ union Multitype {       /* for multiple entry points */
         char g;
         int16_t h;
         int32_t i;
-        real r;
-        doublereal d;
+        float r;
+        double d;
         complex c;
         doublecomplex z;
         };
@@ -141,15 +138,15 @@ struct Namelist {
 typedef struct Namelist Namelist;
 
 #define abs(x) ((x) >= 0 ? (x) : -(x))
-#define dabs(x) (doublereal)abs(x)
+#define dabs(x) (double)abs(x)
 #ifndef min
 #define min(a,b) ((a) <= (b) ? (a) : (b))
 #endif
 #ifndef max
 #define max(a,b) ((a) >= (b) ? (a) : (b))
 #endif
-#define dmin(a,b) (doublereal)min(a,b)
-#define dmax(a,b) (doublereal)max(a,b)
+#define dmin(a,b) (double)min(a,b)
+#define dmax(a,b) (double)max(a,b)
 
 /* undef any lower-case symbols that your C compiler predefines, e.g.: */
 

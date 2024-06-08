@@ -1,3 +1,5 @@
+#include <math.h>
+
 /*
  * Revision 1.2  1996/08/20  20:18:55  jaf
  * Removed all static local variables that were SAVE'd in the Fortran
@@ -19,7 +21,7 @@
 
 #include "f2c.h"
 
-int bsynz_(real *coef, int32_t *ip, int32_t *iv, real *sout, real *rms, real *ratio, real *g2pass, struct lpc10_decoder_state *st);
+int bsynz_(float *coef, int32_t *ip, int32_t *iv, float *sout, float *rms, float *ratio, float *g2pass, struct lpc10_decoder_state *st);
 
 /* Common Block Declarations */
 
@@ -88,41 +90,38 @@ extern struct {
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITBSYNZ. */
 
-/* Subroutine */ int bsynz_(real *coef, int32_t *ip, int32_t *iv, 
-	real *sout, real *rms, real *ratio, real *g2pass,
+/* Subroutine */ int bsynz_(float *coef, int32_t *ip, int32_t *iv, 
+	float *sout, float *rms, float *ratio, float *g2pass,
 			    struct lpc10_decoder_state *st)
 {
     /* Initialized data */
 
     int32_t *ipo;
-    real *rmso;
+    float *rmso;
     static int32_t kexc[25] = { 8,-16,26,-48,86,-162,294,-502,718,-728,184,
 	    672,-610,-672,184,728,718,502,294,162,86,48,26,16,8 };
-    real *exc;
-    real *exc2;
-    real *lpi1;
-    real *lpi2;
-    real *lpi3;
-    real *hpi1;
-    real *hpi2;
-    real *hpi3;
+    float *exc;
+    float *exc2;
+    float *lpi1;
+    float *lpi2;
+    float *lpi3;
+    float *hpi1;
+    float *hpi2;
+    float *hpi3;
 
     /* System generated locals */
     int32_t i__1, i__2;
-    real r__1, r__2;
-
-    /* Builtin functions */
-    double sqrt(doublereal);
+    float r__1, r__2;
 
     /* Local variables */
-    real gain, xssq;
+    float gain, xssq;
     int32_t i__, j, k;
-    real noise[166], pulse;
+    float noise[166], pulse;
     int32_t px;
-    real sscale;
+    float sscale;
     extern int32_t random_(struct lpc10_decoder_state *);
-    real xy, sum, ssq;
-    real lpi0, hpi0;
+    float xy, sum, ssq;
+    float lpi0, hpi0;
 
 /*   LPC Processing control variables: */
 
@@ -249,7 +248,7 @@ extern struct {
 /*  Generate white noise for unvoiced */
 	i__1 = *ip;
 	for (i__ = 1; i__ <= i__1; ++i__) {
-	    exc[contrl_1.order + i__ - 1] = (real) (random_(st) / 64);
+	    exc[contrl_1.order + i__ - 1] = (float) (random_(st) / 64);
 	}
 /*  Impulse doublet excitation for plosives */
 /*       (RANDOM()+32768) is in the range 0 to 2**16-1.  Therefore the
@@ -269,7 +268,7 @@ e */
 	exc[px] -= pulse;
 /*  Load voiced excitation */
     } else {
-	sscale = sqrt((real) (*ip)) / 6.928f;
+	sscale = sqrt((float) (*ip)) / 6.928f;
 	i__1 = *ip;
 	for (i__ = 1; i__ <= i__1; ++i__) {
 	    exc[contrl_1.order + i__ - 1] = 0.f;
