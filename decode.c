@@ -1,25 +1,5 @@
-/*
-
- * Revision 1.2  1996/08/20  20:22:39  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_decoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_decoder_state().
- *
- * Revision 1.1  1996/08/19  22:32:38  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "f2c.h"
+#include "middle.h"
 
 extern int decode_(integer *ipitv, integer *irms, integer *irc, integer *voice, integer *pitch, real *rms, real *rc, struct lpc10_decoder_state *st);
 
@@ -166,7 +146,6 @@ static integer c__2 = 2;
     /* Local variables */
     extern /* Subroutine */ int ham84_(integer *, integer *, integer *);
     integer ipit, iout, i__, icorf, index, ivoic, ixcor, i1, i2, i4;
-    extern integer median_(integer *, integer *, integer *);
     integer ishift, errcnt, lsb;
 
 
@@ -428,15 +407,14 @@ static integer c__2 = 2;
 	if ((i__1 = drms[1] - drms[0], (real) abs(i__1)) >= corth[ixcor + 3] 
 		&& (i__2 = drms[1] - drms[2], (real) abs(i__2)) >= corth[
 		ixcor + 3]) {
-	    *irms = median_(&drms[2], &drms[1], drms);
+	    *irms = middle(drms[2], drms[1], drms[0]);
 	}
 	for (i__ = 1; i__ <= 6; ++i__) {
 	    if ((i__1 = drc[i__ * 3 - 2] - drc[i__ * 3 - 3], (real) abs(i__1))
 		     >= corth[ixcor + ((i__ + 2) << 2) - 5] && (i__2 = drc[i__ *
 		     3 - 2] - drc[i__ * 3 - 1], (real) abs(i__2)) >= corth[
 		    ixcor + ((i__ + 2) << 2) - 5]) {
-		irc[i__] = median_(&drc[i__ * 3 - 1], &drc[i__ * 3 - 2], &drc[
-			i__ * 3 - 3]);
+		irc[i__] = middle(drc[i__ * 3 - 1], drc[i__ * 3 - 2], drc[i__ * 3 - 3]);
 	    }
 	}
     }
@@ -445,7 +423,7 @@ static integer c__2 = 2;
 	if ((i__1 = dpit[1] - dpit[0], (real) abs(i__1)) >= corth[ixcor - 1] 
 		&& (i__2 = dpit[1] - dpit[2], (real) abs(i__2)) >= corth[
 		ixcor - 1]) {
-	    *pitch = median_(&dpit[2], &dpit[1], dpit);
+	    *pitch = middle(dpit[2], dpit[1], dpit[0]);
 	}
     }
 /*  If bit 5 of ICORF is set then RC(5) - RC(10) are loaded with */
