@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern int hp100_(real *speech, integer *start, integer *end,
+extern int hp100_(real *speech, int32_t *start, int32_t *end,
 		  struct lpc10_encoder_state *st);
 extern int inithp100_(void);
 
@@ -48,7 +48,7 @@ extern int inithp100_(void);
 /* you want to switch to using a new audio stream for this filter, or */
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITHP100. */
-/* Subroutine */ int hp100_(real *speech, integer *start, integer *end,
+/* Subroutine */ int hp100_(real *speech, int32_t *start, int32_t *end,
 	struct lpc10_encoder_state *st)
 {
     /* Temporary local copies of variables in lpc10_encoder_state.
@@ -63,10 +63,10 @@ extern int inithp100_(void);
     real z22;
 
     /* System generated locals */
-    integer i__1;
+    int32_t i__1;
 
     /* Local variables */
-    integer i__;
+    int32_t i__;
     real si, err;
 
 /*       Arguments */

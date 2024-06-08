@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int vparms_(integer *vwin, real *inbuf, real *lpbuf, integer *buflim, integer *half, real *dither, integer *mintau, integer *zc, integer *lbe, integer *fbe, real *qs, real *rc1, real *ar_b__, real *ar_f__);
+extern int vparms_(int32_t *vwin, real *inbuf, real *lpbuf, int32_t *buflim, int32_t *half, real *dither, int32_t *mintau, int32_t *zc, int32_t *lbe, int32_t *fbe, real *qs, real *rc1, real *ar_b__, real *ar_f__);
 
 /* Table of constant values */
 
@@ -104,23 +104,23 @@ static real c_b2 = 1.f;
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int vparms_(integer *vwin, real *inbuf, real *lpbuf, integer 
-	*buflim, integer *half, real *dither, integer *mintau, integer *zc, 
-	integer *lbe, integer *fbe, real *qs, real *rc1, real *ar_b__, real *
+/* Subroutine */ int vparms_(int32_t *vwin, real *inbuf, real *lpbuf, int32_t 
+	*buflim, int32_t *half, real *dither, int32_t *mintau, int32_t *zc, 
+	int32_t *lbe, int32_t *fbe, real *qs, real *rc1, real *ar_b__, real *
 	ar_f__)
 {
     /* System generated locals */
-    integer inbuf_offset, lpbuf_offset, i__1;
+    int32_t inbuf_offset, lpbuf_offset, i__1;
     real r__1, r__2;
 
     /* Builtin functions */
     double r_sign(real *, real *);
-    integer i_nint(real *);
+    int32_t i_nint(real *);
 
     /* Local variables */
-    integer vlen, stop, i__;
+    int32_t vlen, stop, i__;
     real e_pre__;
-    integer start;
+    int32_t start;
     real ap_rms__, e_0__, oldsgn, lp_rms__, e_b__, e_f__, r_b__, r_f__, e0ap;
 
 /*       Arguments */

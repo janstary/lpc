@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern int pitsyn_(integer *order, integer *voice, integer *pitch, real *rms, real *rc, integer *lframe, integer *ivuv, integer *ipiti, real *rmsi, real *rci, integer *nout, real *ratio, struct lpc10_decoder_state *st);
+extern int pitsyn_(int32_t *order, int32_t *voice, int32_t *pitch, real *rms, real *rc, int32_t *lframe, int32_t *ivuv, int32_t *ipiti, real *rmsi, real *rci, int32_t *nout, real *ratio, struct lpc10_decoder_state *st);
 
 /* ***************************************************************** */
 
@@ -96,9 +96,9 @@ extern int pitsyn_(integer *order, integer *voice, integer *pitch, real *rms, re
 /*  RATIO  - Previous to present energy ratio */
 /*           Always assigned a value. */
 
-/* Subroutine */ int pitsyn_(integer *order, integer *voice, 
-	integer *pitch, real *rms, real *rc, integer *lframe, integer *ivuv, 
-	integer *ipiti, real *rmsi, real *rci, integer *nout, real *ratio,
+/* Subroutine */ int pitsyn_(int32_t *order, int32_t *voice, 
+	int32_t *pitch, real *rms, real *rc, int32_t *lframe, int32_t *ivuv, 
+	int32_t *ipiti, real *rmsi, real *rci, int32_t *nout, real *ratio,
 			       struct lpc10_decoder_state *st)
 {
     /* Initialized data */
@@ -107,7 +107,7 @@ extern int pitsyn_(integer *order, integer *voice, integer *pitch, real *rms, re
     int32_t *first;
 
     /* System generated locals */
-    integer rci_dim1 = 0, rci_offset, i__1, i__2;
+    int32_t rci_dim1 = 0, rci_offset, i__1, i__2;
     real r__1;
 
     /* Builtin functions */
@@ -115,14 +115,14 @@ extern int pitsyn_(integer *order, integer *voice, integer *pitch, real *rms, re
 
     /* Local variables */
     real alrn, alro, yarc[10], prop;
-    integer i__, j, vflag, jused, lsamp;
-    integer *jsamp;
+    int32_t i__, j, vflag, jused, lsamp;
+    int32_t *jsamp;
     real slope;
-    integer *ipito;
+    int32_t *ipito;
     real uvpit;
-    integer ip, nl, ivoice;
-    integer *ivoico;
-    integer istart;
+    int32_t ip, nl, ivoice;
+    int32_t *ivoico;
+    int32_t istart;
     real *rco;
     real xxy;
 

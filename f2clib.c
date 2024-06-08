@@ -26,11 +26,11 @@ with anything else, and I'll get on that case before we go stable.
 
 #include "f2c.h"
 
-integer pow_ii(integer *ap, integer *bp);
+int32_t pow_ii(int32_t *ap, int32_t *bp);
 
-integer pow_ii(integer *ap, integer *bp)
+int32_t pow_ii(int32_t *ap, int32_t *bp)
 {
-	integer pow, x, n;
+	int32_t pow, x, n;
 	unsigned long u;
 
 	x = *ap;
@@ -67,11 +67,11 @@ return( *b >= 0 ? x : -x);
 }
 
 
-integer i_nint(real *x);
+int32_t i_nint(real *x);
 
 #undef abs
 #include "math.h"
-integer i_nint(real *x)
+int32_t i_nint(real *x)
 {
 return( (*x)>=0 ?
 	floor(*x + .5) : -floor(.5 - *x) );

@@ -24,13 +24,13 @@
 
 #include "f2c.h"
 
-extern int lpcenc_(real *speech, integer *bits);
+extern int lpcenc_(real *speech, int32_t *bits);
 extern int initlpcenc_(void);
 
 /* Table of constant values */
 
-static integer c__180 = 180;
-static integer c__10 = 10;
+static int32_t c__180 = 180;
+static int32_t c__10 = 10;
 
 /* ***************************************************************** */
 
@@ -72,18 +72,18 @@ static integer c__10 = 10;
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITLPCENC. */
 
-/* Subroutine */ int lpc10_encode(real *speech, integer *bits,
+/* Subroutine */ int lpc10_encode(real *speech, int32_t *bits,
 				  struct lpc10_encoder_state *st)
 {
-    integer irms, voice[2], pitch, ipitv;
+    int32_t irms, voice[2], pitch, ipitv;
     real rc[10];
-    extern /* Subroutine */ int encode_(integer *, integer *, real *, real *, 
-	    integer *, integer *, integer *), chanwr_(integer *, integer *, 
-	    integer *, integer *, integer *, struct lpc10_encoder_state *),
-            analys_(real *, integer *, 
-	    integer *, real *, real *, struct lpc10_encoder_state *),
-            prepro_(real *, integer *, struct lpc10_encoder_state *);
-    integer irc[10];
+    extern /* Subroutine */ int encode_(int32_t *, int32_t *, real *, real *, 
+	    int32_t *, int32_t *, int32_t *), chanwr_(int32_t *, int32_t *, 
+	    int32_t *, int32_t *, int32_t *, struct lpc10_encoder_state *),
+            analys_(real *, int32_t *, 
+	    int32_t *, real *, real *, struct lpc10_encoder_state *),
+            prepro_(real *, int32_t *, struct lpc10_encoder_state *);
+    int32_t irc[10];
     real rms;
 
 /*       Arguments */

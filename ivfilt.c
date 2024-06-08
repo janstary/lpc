@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int ivfilt_(real *lpbuf, real *ivbuf, integer *len, integer *nsamp, real *ivrc);
+extern int ivfilt_(real *lpbuf, real *ivbuf, int32_t *len, int32_t *nsamp, real *ivrc);
 
 /* ********************************************************************* */
 
@@ -53,14 +53,14 @@ extern int ivfilt_(real *lpbuf, real *ivbuf, integer *len, integer *nsamp, real 
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int ivfilt_(real *lpbuf, real *ivbuf, integer *len, integer *
+/* Subroutine */ int ivfilt_(real *lpbuf, real *ivbuf, int32_t *len, int32_t *
 	nsamp, real *ivrc)
 {
     /* System generated locals */
-    integer i__1;
+    int32_t i__1;
 
     /* Local variables */
-    integer i__, j, k;
+    int32_t i__, j, k;
     real r__[3], pc1, pc2;
 
 /* 	Arguments */

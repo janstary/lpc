@@ -21,12 +21,12 @@
 
 #include "f2c.h"
 
-extern int dyptrk_(real *amdf, integer *ltau, integer *minptr, integer *voice, integer *pitch, integer *midx, struct lpc10_encoder_state *st);
+extern int dyptrk_(real *amdf, int32_t *ltau, int32_t *minptr, int32_t *voice, int32_t *pitch, int32_t *midx, struct lpc10_encoder_state *st);
 
 /* Common Block Declarations */
 
 extern struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -98,24 +98,24 @@ extern struct {
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITDYPTRK. */
 
-/* Subroutine */ int dyptrk_(real *amdf, integer *ltau, integer *
-	minptr, integer *voice, integer *pitch, integer *midx,
+/* Subroutine */ int dyptrk_(real *amdf, int32_t *ltau, int32_t *
+	minptr, int32_t *voice, int32_t *pitch, int32_t *midx,
 			       struct lpc10_encoder_state *st)
 {
     /* Initialized data */
 
     real *s;
-    integer *p;
-    integer *ipoint;
+    int32_t *p;
+    int32_t *ipoint;
     real *alphax;
 
     /* System generated locals */
-    integer i__1;
+    int32_t i__1;
 
     /* Local variables */
-    integer pbar;
+    int32_t pbar;
     real sbar;
-    integer iptr, i__, j;
+    int32_t iptr, i__, j;
     real alpha, minsc, maxsc;
 
 /*       Arguments */
@@ -133,7 +133,7 @@ extern struct {
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/* 	integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/* 	int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -162,7 +162,7 @@ extern struct {
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/* 	integer quant, nbits */
+/* 	int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 
@@ -188,7 +188,7 @@ extern struct {
 /* would be of much interest to an application in which LPC10 is */
 /* embedded. */
 /* listl and lincnt are not needed for an embedded LPC10 at all. */
-/* 	integer nframe, nunsfm, iclip, maxosp, listl, lincnt */
+/* 	int32_t nframe, nunsfm, iclip, maxosp, listl, lincnt */
 /* 	common /contrl/ fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /* 	common /contrl/ quant, nbits */
 /* 	common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */

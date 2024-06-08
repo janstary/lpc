@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern int deemp_(real *x, integer *n, struct lpc10_decoder_state *st);
+extern int deemp_(real *x, int32_t *n, struct lpc10_decoder_state *st);
 
 /* ***************************************************************** */
 
@@ -76,7 +76,7 @@ extern int deemp_(real *x, integer *n, struct lpc10_decoder_state *st);
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITDEEMP. */
 
-/* Subroutine */ int deemp_(real *x, integer *n, struct lpc10_decoder_state *st)
+/* Subroutine */ int deemp_(real *x, int32_t *n, struct lpc10_decoder_state *st)
 {
     /* Initialized data */
 
@@ -87,11 +87,11 @@ extern int deemp_(real *x, integer *n, struct lpc10_decoder_state *st);
     real *deo3;
 
     /* System generated locals */
-    integer i__1;
+    int32_t i__1;
     real r__1;
 
     /* Local variables */
-    integer k;
+    int32_t k;
     real dei0;
 
 /*       Arguments */

@@ -24,13 +24,13 @@
 
 #include "f2c.h"
 
-extern int lpcdec_(integer *bits, real *speech);
+extern int lpcdec_(int32_t *bits, real *speech);
 extern int initlpcdec_(void);
 
 /* Common Block Declarations */
 
 extern struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -38,7 +38,7 @@ extern struct {
 
 /* Table of constant values */
 
-static integer c__10 = 10;
+static int32_t c__10 = 10;
 
 /* ***************************************************************** */
 
@@ -77,18 +77,18 @@ static integer c__10 = 10;
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITLPCDEC. */
 
-/* Subroutine */ int lpc10_decode(integer *bits, real *speech,
+/* Subroutine */ int lpc10_decode(int32_t *bits, real *speech,
 				  struct lpc10_decoder_state *st)
 {
-    integer irms, voice[2], pitch, ipitv;
-    extern /* Subroutine */ int decode_(integer *, integer *, integer *, 
-	    integer *, integer *, real *, real *, struct lpc10_decoder_state *);
+    int32_t irms, voice[2], pitch, ipitv;
+    extern /* Subroutine */ int decode_(int32_t *, int32_t *, int32_t *, 
+	    int32_t *, int32_t *, real *, real *, struct lpc10_decoder_state *);
     real rc[10];
-    extern /* Subroutine */ int chanrd_(integer *, integer *, integer *, 
-	    integer *, integer *), synths_(integer *, 
-	    integer *, real *, real *, real *, integer *,
+    extern /* Subroutine */ int chanrd_(int32_t *, int32_t *, int32_t *, 
+	    int32_t *, int32_t *), synths_(int32_t *, 
+	    int32_t *, real *, real *, real *, int32_t *,
 					   struct lpc10_decoder_state *);
-    integer irc[10], len;
+    int32_t irc[10], len;
     real rms;
 
 
@@ -108,7 +108,7 @@ static integer c__10 = 10;
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/* 	integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/* 	int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -137,7 +137,7 @@ static integer c__10 = 10;
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/* 	integer quant, nbits */
+/* 	int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 
@@ -163,7 +163,7 @@ static integer c__10 = 10;
 /* would be of much interest to an application in which LPC10 is */
 /* embedded. */
 /* listl and lincnt are not needed for an embedded LPC10 at all. */
-/* 	integer nframe, nunsfm, iclip, maxosp, listl, lincnt */
+/* 	int32_t nframe, nunsfm, iclip, maxosp, listl, lincnt */
 /* 	common /contrl/ fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /* 	common /contrl/ quant, nbits */
 /* 	common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */

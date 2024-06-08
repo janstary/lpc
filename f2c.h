@@ -3,7 +3,6 @@
 
 #include "lpc10.h"
 
-/*typedef long int integer;*/
 /*typedef short int shortint;*/
 /*typedef float real;*/
 /* doublereal only used for function arguments to sqrt, exp, etc. */
@@ -123,7 +122,7 @@ typedef struct
 union Multitype {       /* for multiple entry points */
         integer1 g;
         int16_t h;
-        integer i;
+        int32_t i;
         /* longint j; */
         real r;
         doublereal d;

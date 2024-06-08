@@ -13,12 +13,12 @@
 
 #include "f2c.h"
 
-extern int encode_(integer *voice, integer *pitch, real *rms, real *rc, integer *ipitch, integer *irms, integer *irc);
+extern int encode_(int32_t *voice, int32_t *pitch, real *rms, real *rc, int32_t *ipitch, int32_t *irms, int32_t *irc);
 
 /* Common Block Declarations */
 
 extern struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -26,7 +26,7 @@ extern struct {
 
 /* Table of constant values */
 
-static integer c__2 = 2;
+static int32_t c__2 = 2;
 
 /* ***************************************************************** */
 
@@ -80,36 +80,36 @@ static integer c__2 = 2;
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int encode_(integer *voice, integer *pitch, real *rms, real *
-	rc, integer *ipitch, integer *irms, integer *irc)
+/* Subroutine */ int encode_(int32_t *voice, int32_t *pitch, real *rms, real *
+	rc, int32_t *ipitch, int32_t *irms, int32_t *irc)
 {
     /* Initialized data */
 
-    static integer enctab[16] = { 0,7,11,12,13,10,6,1,14,9,5,2,3,4,8,15 };
-    static integer entau[60] = { 19,11,27,25,29,21,23,22,30,14,15,7,39,38,46,
+    static int32_t enctab[16] = { 0,7,11,12,13,10,6,1,14,9,5,2,3,4,8,15 };
+    static int32_t entau[60] = { 19,11,27,25,29,21,23,22,30,14,15,7,39,38,46,
 	    42,43,41,45,37,53,49,51,50,54,52,60,56,58,26,90,88,92,84,86,82,83,
 	    81,85,69,77,73,75,74,78,70,71,67,99,97,113,112,114,98,106,104,108,
 	    100,101,76 };
-    static integer enadd[8] = { 1920,-768,2432,1280,3584,1536,2816,-1152 };
+    static int32_t enadd[8] = { 1920,-768,2432,1280,3584,1536,2816,-1152 };
     static real enscl[8] = { .0204f,.0167f,.0145f,.0147f,.0143f,.0135f,.0125f,
 	    .0112f };
-    static integer enbits[8] = { 6,5,4,4,4,4,3,3 };
-    static integer entab6[64] = { 0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,
+    static int32_t enbits[8] = { 6,5,4,4,4,4,3,3 };
+    static int32_t entab6[64] = { 0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,
 	    3,3,3,3,3,4,4,4,4,4,4,4,5,5,5,5,5,6,6,6,6,6,7,7,7,7,7,8,8,8,8,9,9,
 	    9,10,10,11,11,12,13,14,15 };
-    static integer rmst[64] = { 1024,936,856,784,718,656,600,550,502,460,420,
+    static int32_t rmst[64] = { 1024,936,856,784,718,656,600,550,502,460,420,
 	    384,352,328,294,270,246,226,206,188,172,158,144,132,120,110,102,
 	    92,84,78,70,64,60,54,50,46,42,38,34,32,30,26,24,22,20,18,17,16,15,
 	    14,13,12,11,10,9,8,7,6,5,4,3,2,1,0 };
 
     /* System generated locals */
-    integer i__1, i__2;
+    int32_t i__1, i__2;
 
     /* Builtin functions */
-    integer pow_ii(integer *, integer *);
+    int32_t pow_ii(int32_t *, int32_t *);
 
     /* Local variables */
-    integer idel, nbit, i__, j, i2, i3, mrk;
+    int32_t idel, nbit, i__, j, i2, i3, mrk;
 
 
 /*   LPC Configuration parameters: */
@@ -129,7 +129,7 @@ static integer c__2 = 2;
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/* 	integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/* 	int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -158,7 +158,7 @@ static integer c__2 = 2;
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/* 	integer quant, nbits */
+/* 	int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 

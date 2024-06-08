@@ -21,12 +21,12 @@
 
 #include "f2c.h"
 
-extern int synths_(integer *voice, integer *pitch, real *rms, real *rc, real *speech, integer *k, struct lpc10_decoder_state *st);
+extern int synths_(int32_t *voice, int32_t *pitch, real *rms, real *rc, real *speech, int32_t *k, struct lpc10_decoder_state *st);
 
 /* Common Block Declarations */
 
 extern struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -126,32 +126,32 @@ static real c_b2 = .7f;
 /*  K      - Number of samples placed into array SPEECH. */
 /*           This is always MAXFRM. */
 
-/* Subroutine */ int synths_(integer *voice, integer *pitch, real *
-	rms, real *rc, real *speech, integer *k, struct lpc10_decoder_state *st)
+/* Subroutine */ int synths_(int32_t *voice, int32_t *pitch, real *
+	rms, real *rc, real *speech, int32_t *k, struct lpc10_decoder_state *st)
 {
     /* Initialized data */
 
     real *buf;
-    integer *buflen;
+    int32_t *buflen;
 
     /* System generated locals */
-    integer i__1;
+    int32_t i__1;
     real r__1, r__2;
 
     /* Local variables */
     real rmsi[16];
-    integer nout, ivuv[16], i__, j;
-    extern /* Subroutine */ int deemp_(real *, integer *, struct lpc10_decoder_state *);
+    int32_t nout, ivuv[16], i__, j;
+    extern /* Subroutine */ int deemp_(real *, int32_t *, struct lpc10_decoder_state *);
     real ratio;
-    integer ipiti[16];
-    extern int bsynz_(real *, integer *, 
-	    integer *, real *, real *, real *, real *, struct lpc10_decoder_state *), irc2pc_(real *, real *
-	    , integer *, real *, real *);
+    int32_t ipiti[16];
+    extern int bsynz_(real *, int32_t *, 
+	    int32_t *, real *, real *, real *, real *, struct lpc10_decoder_state *), irc2pc_(real *, real *
+	    , int32_t *, real *, real *);
     real g2pass;
     real pc[10];
-    extern /* Subroutine */ int pitsyn_(integer *, integer *, integer *, real 
-	    *, real *, integer *, integer *, integer *, real *, real *, 
-	    integer *, real *, struct lpc10_decoder_state *);
+    extern /* Subroutine */ int pitsyn_(int32_t *, int32_t *, int32_t *, real 
+	    *, real *, int32_t *, int32_t *, int32_t *, real *, real *, 
+	    int32_t *, real *, struct lpc10_decoder_state *);
     real rci[160]	/* was [10][16] */;
 
 /*   LPC Configuration parameters: */
@@ -171,7 +171,7 @@ static real c_b2 = .7f;
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/* 	integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/* 	int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -200,7 +200,7 @@ static real c_b2 = .7f;
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/* 	integer quant, nbits */
+/* 	int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 
@@ -226,7 +226,7 @@ static real c_b2 = .7f;
 /* would be of much interest to an application in which LPC10 is */
 /* embedded. */
 /* listl and lincnt are not needed for an embedded LPC10 at all. */
-/* 	integer nframe, nunsfm, iclip, maxosp, listl, lincnt */
+/* 	int32_t nframe, nunsfm, iclip, maxosp, listl, lincnt */
 /* 	common /contrl/ fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /* 	common /contrl/ quant, nbits */
 /* 	common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */

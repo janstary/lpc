@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int placev_(integer *osbuf, integer *osptr, integer *oslen, integer *obound, integer *vwin, integer *af, integer *lframe, integer *minwin, integer *maxwin, integer *dvwinl, integer *dvwinh);
+extern int placev_(int32_t *osbuf, int32_t *osptr, int32_t *oslen, int32_t *obound, int32_t *vwin, int32_t *af, int32_t *lframe, int32_t *minwin, int32_t *maxwin, int32_t *dvwinl, int32_t *dvwinh);
 
 /* ****************************************************************** */
 
@@ -76,16 +76,16 @@ extern int placev_(integer *osbuf, integer *osptr, integer *oslen, integer *obou
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int placev_(integer *osbuf, integer *osptr, integer *oslen, 
-	integer *obound, integer *vwin, integer *af, integer *lframe, integer 
-	*minwin, integer *maxwin, integer *dvwinl, integer *dvwinh)
+/* Subroutine */ int placev_(int32_t *osbuf, int32_t *osptr, int32_t *oslen, 
+	int32_t *obound, int32_t *vwin, int32_t *af, int32_t *lframe, int32_t 
+	*minwin, int32_t *maxwin, int32_t *dvwinl, int32_t *dvwinh)
 {
     /* System generated locals */
-    integer i__1, i__2;
+    int32_t i__1, i__2;
 
     /* Local variables */
     int32_t crit;
-    integer i__, q, osptr1, hrange, lrange;
+    int32_t i__, q, osptr1, hrange, lrange;
 
 /*       Arguments */
 /*       Local variables that need not be saved */

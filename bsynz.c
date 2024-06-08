@@ -19,12 +19,12 @@
 
 #include "f2c.h"
 
-int bsynz_(real *coef, integer *ip, integer *iv, real *sout, real *rms, real *ratio, real *g2pass, struct lpc10_decoder_state *st);
+int bsynz_(real *coef, int32_t *ip, int32_t *iv, real *sout, real *rms, real *ratio, real *g2pass, struct lpc10_decoder_state *st);
 
 /* Common Block Declarations */
 
 extern struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -88,15 +88,15 @@ extern struct {
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITBSYNZ. */
 
-/* Subroutine */ int bsynz_(real *coef, integer *ip, integer *iv, 
+/* Subroutine */ int bsynz_(real *coef, int32_t *ip, int32_t *iv, 
 	real *sout, real *rms, real *ratio, real *g2pass,
 			    struct lpc10_decoder_state *st)
 {
     /* Initialized data */
 
-    integer *ipo;
+    int32_t *ipo;
     real *rmso;
-    static integer kexc[25] = { 8,-16,26,-48,86,-162,294,-502,718,-728,184,
+    static int32_t kexc[25] = { 8,-16,26,-48,86,-162,294,-502,718,-728,184,
 	    672,-610,-672,184,728,718,502,294,162,86,48,26,16,8 };
     real *exc;
     real *exc2;
@@ -108,7 +108,7 @@ extern struct {
     real *hpi3;
 
     /* System generated locals */
-    integer i__1, i__2;
+    int32_t i__1, i__2;
     real r__1, r__2;
 
     /* Builtin functions */
@@ -116,11 +116,11 @@ extern struct {
 
     /* Local variables */
     real gain, xssq;
-    integer i__, j, k;
+    int32_t i__, j, k;
     real noise[166], pulse;
-    integer px;
+    int32_t px;
     real sscale;
-    extern integer random_(struct lpc10_decoder_state *);
+    extern int32_t random_(struct lpc10_decoder_state *);
     real xy, sum, ssq;
     real lpi0, hpi0;
 
@@ -137,7 +137,7 @@ extern struct {
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/* 	integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/* 	int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -166,7 +166,7 @@ extern struct {
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/* 	integer quant, nbits */
+/* 	int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 
@@ -192,7 +192,7 @@ extern struct {
 /* would be of much interest to an application in which LPC10 is */
 /* embedded. */
 /* listl and lincnt are not needed for an embedded LPC10 at all. */
-/* 	integer nframe, nunsfm, iclip, maxosp, listl, lincnt */
+/* 	int32_t nframe, nunsfm, iclip, maxosp, listl, lincnt */
 /* 	common /contrl/ fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /* 	common /contrl/ quant, nbits */
 /* 	common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */

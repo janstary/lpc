@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int energy_(integer *len, real *speech, real *rms);
+extern int energy_(int32_t *len, real *speech, real *rms);
 
 /* ********************************************************************* */
 
@@ -48,16 +48,16 @@ extern int energy_(integer *len, real *speech, real *rms);
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int energy_(integer *len, real *speech, real *rms)
+/* Subroutine */ int energy_(int32_t *len, real *speech, real *rms)
 {
     /* System generated locals */
-    integer i__1;
+    int32_t i__1;
 
     /* Builtin functions */
     double sqrt(doublereal);
 
     /* Local variables */
-    integer i__;
+    int32_t i__;
 
 /*       Arguments */
 /*       Local variables that need not be saved */

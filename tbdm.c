@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int tbdm_(real *speech, integer *lpita, integer *tau, integer *ltau, real *amdf, integer *minptr, integer *maxptr, integer *mintau);
+extern int tbdm_(real *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, real *amdf, int32_t *minptr, int32_t *maxptr, int32_t *mintau);
 
 /* ********************************************************************** */
 
@@ -63,19 +63,19 @@ extern int tbdm_(real *speech, integer *lpita, integer *tau, integer *ltau, real
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int tbdm_(real *speech, integer *lpita, integer *tau, 
-	integer *ltau, real *amdf, integer *minptr, integer *maxptr, integer *
+/* Subroutine */ int tbdm_(real *speech, int32_t *lpita, int32_t *tau, 
+	int32_t *ltau, real *amdf, int32_t *minptr, int32_t *maxptr, int32_t *
 	mintau)
 {
     /* System generated locals */
-    integer i__1, i__2, i__3, i__4;
+    int32_t i__1, i__2, i__3, i__4;
 
     /* Local variables */
     real amdf2[6];
-    integer minp2, ltau2, maxp2, i__;
-    extern /* Subroutine */ int difmag_(real *, integer *, integer *, integer 
-	    *, integer *, real *, integer *, integer *);
-    integer minamd, ptr, tau2[6];
+    int32_t minp2, ltau2, maxp2, i__;
+    extern /* Subroutine */ int difmag_(real *, int32_t *, int32_t *, int32_t 
+	    *, int32_t *, real *, int32_t *, int32_t *);
+    int32_t minamd, ptr, tau2[6];
 
 /* 	Arguments */
 /* 	REAL SPEECH(LPITA+TAU(LTAU)), AMDF(LTAU) */

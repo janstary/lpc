@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern integer random_(struct lpc10_decoder_state *st);
+extern int32_t random_(struct lpc10_decoder_state *st);
 
 /* ********************************************************************** */
 
@@ -63,16 +63,16 @@ extern integer random_(struct lpc10_decoder_state *st);
 /* this local state when switching between audio streams, because its */
 /* results are only used to generate noise for unvoiced frames. */
 
-integer random_(struct lpc10_decoder_state *st)
+int32_t random_(struct lpc10_decoder_state *st)
 {
     /* Initialized data */
 
-    integer *j;
-    integer *k;
+    int32_t *j;
+    int32_t *k;
     int16_t *y;
 
     /* System generated locals */
-    integer ret_val;
+    int32_t ret_val;
 
 /* 	Parameters/constants */
 /*       Local state */

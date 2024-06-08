@@ -5,12 +5,12 @@
 
 #include "f2c.h"
 
-int analys_(real *speech, integer *voice, integer *pitch, real *rms, real *rc, struct lpc10_encoder_state *st);
+int analys_(real *speech, int32_t *voice, int32_t *pitch, real *rms, real *rc, struct lpc10_encoder_state *st);
 
 /* Common Block Declarations */
 
 extern struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -18,17 +18,17 @@ extern struct {
 
 /* Table of constant values */
 
-static integer c__10 = 10;
-static integer c__181 = 181;
-static integer c__720 = 720;
-static integer c__3 = 3;
-static integer c__90 = 90;
-static integer c__156 = 156;
-static integer c__307 = 307;
-static integer c__462 = 462;
-static integer c__312 = 312;
-static integer c__60 = 60;
-static integer c__1 = 1;
+static int32_t c__10 = 10;
+static int32_t c__181 = 181;
+static int32_t c__720 = 720;
+static int32_t c__3 = 3;
+static int32_t c__90 = 90;
+static int32_t c__156 = 156;
+static int32_t c__307 = 307;
+static int32_t c__462 = 462;
+static int32_t c__312 = 312;
+static int32_t c__60 = 60;
+static int32_t c__1 = 1;
 
 /* ****************************************************************** */
 
@@ -123,64 +123,64 @@ static integer c__1 = 1;
 /* This entry has no local state.  It accesses a "constant" array */
 /* declared in ANALYS. */
 
-/* Subroutine */ int analys_(real *speech, integer *voice, integer 
+/* Subroutine */ int analys_(real *speech, int32_t *voice, int32_t 
 	*pitch, real *rms, real *rc, struct lpc10_encoder_state *st)
 {
     /* Initialized data */
 
-    static integer tau[60] = { 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,
+    static int32_t tau[60] = { 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,
 	    35,36,37,38,39,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,
 	    74,76,78,80,84,88,92,96,100,104,108,112,116,120,124,128,132,136,
 	    140,144,148,152,156 };
-    static integer buflim[4] = { 181,720,25,720 };
+    static int32_t buflim[4] = { 181,720,25,720 };
     static real precoef = .9375f;
 
     /* System generated locals */
-    integer i__1;
+    int32_t i__1;
 
     /* Local variables */
     real amdf[60];
-    integer half;
+    int32_t half;
     real abuf[156];
     real *bias;
-    extern /* Subroutine */ int tbdm_(real *, integer *, integer *, integer *,
-	     real *, integer *, integer *, integer *);
-    integer *awin;
-    integer midx, ewin[6]	/* was [2][3] */;
+    extern /* Subroutine */ int tbdm_(real *, int32_t *, int32_t *, int32_t *,
+	     real *, int32_t *, int32_t *, int32_t *);
+    int32_t *awin;
+    int32_t midx, ewin[6]	/* was [2][3] */;
     real ivrc[2], temp;
     real *zpre;
-    integer *vwin;
-    integer i__, j, lanal;
-    extern /* Subroutine */ int rcchk_(integer *, real *, real *), mload_(
-	    integer *, integer *, integer *, real *, real *, real *);
+    int32_t *vwin;
+    int32_t i__, j, lanal;
+    extern /* Subroutine */ int rcchk_(int32_t *, real *, real *), mload_(
+	    int32_t *, int32_t *, int32_t *, real *, real *, real *);
     real *inbuf, *pebuf;
     real *lpbuf, *ivbuf;
     real *rcbuf;
-    integer *osbuf;
-    extern /* Subroutine */ int onset_(real *, integer *, integer *, integer *
-	    , integer *, integer *, integer *, struct lpc10_encoder_state *);
-    integer *osptr;
-    extern int placea_(integer *, integer *
-	    , integer *, integer *, integer *, integer *, integer *, integer *
-	    , integer *), dcbias_(integer *, real *, real *), placev_(integer 
-	    *, integer *, integer *, integer *, integer *, integer *, integer 
-	    *, integer *, integer *, integer *, integer *);
-    integer ipitch;
-    integer *obound;
-    extern /* Subroutine */ int preemp_(real *, real *, integer *, real *, 
-	    real *), voicin_(integer *, real *, real *, integer *, integer *, 
-	    real *, real *, integer *, real *, integer *, integer *, integer *,
+    int32_t *osbuf;
+    extern /* Subroutine */ int onset_(real *, int32_t *, int32_t *, int32_t *
+	    , int32_t *, int32_t *, int32_t *, struct lpc10_encoder_state *);
+    int32_t *osptr;
+    extern int placea_(int32_t *, int32_t *
+	    , int32_t *, int32_t *, int32_t *, int32_t *, int32_t *, int32_t *
+	    , int32_t *), dcbias_(int32_t *, real *, real *), placev_(int32_t 
+	    *, int32_t *, int32_t *, int32_t *, int32_t *, int32_t *, int32_t 
+	    *, int32_t *, int32_t *, int32_t *, int32_t *);
+    int32_t ipitch;
+    int32_t *obound;
+    extern /* Subroutine */ int preemp_(real *, real *, int32_t *, real *, 
+	    real *), voicin_(int32_t *, real *, real *, int32_t *, int32_t *, 
+	    real *, real *, int32_t *, real *, int32_t *, int32_t *, int32_t *,
 	    struct lpc10_encoder_state *);
-    integer *voibuf;
-    integer mintau;
+    int32_t *voibuf;
+    int32_t mintau;
     real *rmsbuf;
-    extern /* Subroutine */ int lpfilt_(real *, real *, integer *, integer *),
-	     ivfilt_(real *, real *, integer *, integer *, real *), energy_(
-	    integer *, real *, real *), invert_(integer *, real *, real *, 
+    extern /* Subroutine */ int lpfilt_(real *, real *, int32_t *, int32_t *),
+	     ivfilt_(real *, real *, int32_t *, int32_t *, real *), energy_(
+	    int32_t *, real *, real *), invert_(int32_t *, real *, real *, 
 	    real *);
-    integer minptr, maxptr;
-    extern /* Subroutine */ int dyptrk_(real *, integer *, integer *, integer 
-	    *, integer *, integer *, struct lpc10_encoder_state *);
+    int32_t minptr, maxptr;
+    extern /* Subroutine */ int dyptrk_(real *, int32_t *, int32_t *, int32_t 
+	    *, int32_t *, int32_t *, struct lpc10_encoder_state *);
     real phi[100]	/* was [10][10] */, psi[10];
 
 /*   LPC Processing control variables: */
@@ -196,7 +196,7 @@ static integer c__1 = 1;
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/* 	integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/* 	int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -225,7 +225,7 @@ static integer c__1 = 1;
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/* 	integer quant, nbits */
+/* 	int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 
@@ -251,7 +251,7 @@ static integer c__1 = 1;
 /* would be of much interest to an application in which LPC10 is */
 /* embedded. */
 /* listl and lincnt are not needed for an embedded LPC10 at all. */
-/* 	integer nframe, nunsfm, iclip, maxosp, listl, lincnt */
+/* 	int32_t nframe, nunsfm, iclip, maxosp, listl, lincnt */
 /* 	common /contrl/ fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /* 	common /contrl/ quant, nbits */
 /* 	common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */

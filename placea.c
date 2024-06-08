@@ -25,7 +25,7 @@ with anything else, and I'll get on that case before we go stable.
 
 #include "f2c.h"
 
-extern int placea_(integer *ipitch, integer *voibuf, integer *obound, integer *af, integer *vwin, integer *awin, integer *ewin, integer *lframe, integer *maxwin);
+extern int placea_(int32_t *ipitch, int32_t *voibuf, int32_t *obound, int32_t *af, int32_t *vwin, int32_t *awin, int32_t *ewin, int32_t *lframe, int32_t *maxwin);
 
 /* *********************************************************************** */
 
@@ -85,21 +85,21 @@ extern int placea_(integer *ipitch, integer *voibuf, integer *obound, integer *a
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int placea_(integer *ipitch, integer *voibuf, integer *
-	obound, integer *af, integer *vwin, integer *awin, integer *ewin, 
-	integer *lframe, integer *maxwin)
+/* Subroutine */ int placea_(int32_t *ipitch, int32_t *voibuf, int32_t *
+	obound, int32_t *af, int32_t *vwin, int32_t *awin, int32_t *ewin, 
+	int32_t *lframe, int32_t *maxwin)
 {
     /* System generated locals */
     real r__1;
 
     /* Builtin functions */
-    integer i_nint(real *);
+    int32_t i_nint(real *);
 
     /* Local variables */
     int32_t allv, winv;
-    integer i__, j, k, l, hrange;
+    int32_t i__, j, k, l, hrange;
     int32_t ephase;
-    integer lrange;
+    int32_t lrange;
 
 /*       Arguments */
 /*       Local variables that need not be saved */

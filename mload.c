@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int mload_(integer *order, integer *awins, integer *awinf, real *speech, real *phi, real *psi);
+extern int mload_(int32_t *order, int32_t *awins, int32_t *awinf, real *speech, real *phi, real *psi);
 
 /* ***************************************************************** */
 
@@ -69,14 +69,14 @@ extern int mload_(integer *order, integer *awins, integer *awinf, real *speech, 
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int mload_(integer *order, integer *awins, integer *awinf, 
+/* Subroutine */ int mload_(int32_t *order, int32_t *awins, int32_t *awinf, 
 	real *speech, real *phi, real *psi)
 {
     /* System generated locals */
-    integer phi_dim1, phi_offset, i__1, i__2;
+    int32_t phi_dim1, phi_offset, i__1, i__2;
 
     /* Local variables */
-    integer c__, i__, r__, start;
+    int32_t c__, i__, r__, start;
 
 /*       Arguments */
 /*       Local variables that need not be saved */

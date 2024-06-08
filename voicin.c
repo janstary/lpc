@@ -21,12 +21,12 @@
 
 #include "f2c.h"
 
-extern int voicin_(integer *vwin, real *inbuf, real *lpbuf, integer *buflim, integer *half, real *minamd, real *maxamd, integer *mintau, real *ivrc, integer *obound, integer *voibuf, integer *af, struct lpc10_encoder_state *st);
+extern int voicin_(int32_t *vwin, real *inbuf, real *lpbuf, int32_t *buflim, int32_t *half, real *minamd, real *maxamd, int32_t *mintau, real *ivrc, int32_t *obound, int32_t *voibuf, int32_t *af, struct lpc10_encoder_state *st);
 
 /* Common Block Declarations */
 
 extern struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -220,10 +220,10 @@ s*/
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITVOICIN. */
 
-/* Subroutine */ int voicin_(integer *vwin, real *inbuf, real *
-	lpbuf, integer *buflim, integer *half, real *minamd, real *maxamd, 
-	integer *mintau, real *ivrc, integer *obound, integer *voibuf, 
-	integer *af, struct lpc10_encoder_state *st)
+/* Subroutine */ int voicin_(int32_t *vwin, real *inbuf, real *
+	lpbuf, int32_t *buflim, int32_t *half, real *minamd, real *maxamd, 
+	int32_t *mintau, real *ivrc, int32_t *obound, int32_t *voibuf, 
+	int32_t *af, struct lpc10_encoder_state *st)
 {
     /* Initialized data */
 
@@ -237,36 +237,36 @@ s*/
 	    0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,
 	    0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,
 	    0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f };
-    static integer nvdcl = 5;
+    static int32_t nvdcl = 5;
     static real vdcl[10] = { 600.f,450.f,300.f,200.f,0.f,0.f,0.f,0.f,0.f,0.f }
 	    ;
 
     /* System generated locals */
-    integer inbuf_offset = 0, lpbuf_offset = 0, i__1, i__2;
+    int32_t inbuf_offset = 0, lpbuf_offset = 0, i__1, i__2;
     real r__1, r__2;
 
     /* Builtin functions */
-    integer i_nint(real *);
+    int32_t i_nint(real *);
     double sqrt(doublereal);
 
     /* Local variables */
     real ar_b__, ar_f__;
-    integer *lbve, *lbue, *fbve, *fbue;
-    integer snrl, i__;
-    integer *ofbue, *sfbue;
+    int32_t *lbve, *lbue, *fbve, *fbue;
+    int32_t snrl, i__;
+    int32_t *ofbue, *sfbue;
     real *voice;
-    integer *olbue, *slbue;
+    int32_t *olbue, *slbue;
     real value[9];
-    integer zc;
+    int32_t zc;
     int32_t ot;
     real qs;
     real *maxmin;
-    integer vstate;
+    int32_t vstate;
     real rc1;
-    extern /* Subroutine */ int vparms_(integer *, real *, real *, integer *, 
-	    integer *, real *, integer *, integer *, integer *, integer *, 
+    extern /* Subroutine */ int vparms_(int32_t *, real *, real *, int32_t *, 
+	    int32_t *, real *, int32_t *, int32_t *, int32_t *, int32_t *, 
 	    real *, real *, real *, real *);
-    integer fbe, lbe;
+    int32_t fbe, lbe;
     real *snr;
     real snr2;
 
@@ -287,7 +287,7 @@ s*/
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/* 	integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/* 	int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -316,7 +316,7 @@ s*/
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/* 	integer quant, nbits */
+/* 	int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 
@@ -342,7 +342,7 @@ s*/
 /* would be of much interest to an application in which LPC10 is */
 /* embedded. */
 /* listl and lincnt are not needed for an embedded LPC10 at all. */
-/* 	integer nframe, nunsfm, iclip, maxosp, listl, lincnt */
+/* 	int32_t nframe, nunsfm, iclip, maxosp, listl, lincnt */
 /* 	common /contrl/ fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /* 	common /contrl/ quant, nbits */
 /* 	common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */

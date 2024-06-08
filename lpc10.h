@@ -37,7 +37,6 @@ with anything else, and I'll get on that case before we go stable.
    files. */
 
 typedef float real;
-typedef int32_t integer;
 
 struct lpc10_encoder_state {
     /* State used only by function hp100 */
@@ -50,12 +49,12 @@ struct lpc10_encoder_state {
     real inbuf[540], pebuf[540];
     real lpbuf[696], ivbuf[312];
     real bias;
-    integer osbuf[10];  /* no initial value necessary */
-    integer osptr;     /* initial value 1 */
-    integer obound[3];
-    integer vwin[6]	/* was [2][3] */;   /* initial value vwin[4] = 307; vwin[5] = 462; */
-    integer awin[6]	/* was [2][3] */;   /* initial value awin[4] = 307; awin[5] = 462; */
-    integer voibuf[8]	/* was [2][4] */;
+    int32_t osbuf[10];  /* no initial value necessary */
+    int32_t osptr;     /* initial value 1 */
+    int32_t obound[3];
+    int32_t vwin[6]	/* was [2][3] */;   /* initial value vwin[4] = 307; vwin[5] = 462; */
+    int32_t awin[6]	/* was [2][3] */;   /* initial value awin[4] = 307; awin[5] = 462; */
+    int32_t voibuf[8]	/* was [2][4] */;
     real rmsbuf[3];
     real rcbuf[30]	/* was [10][3] */;
     real zpre;
@@ -67,9 +66,9 @@ struct lpc10_encoder_state {
     real fpc;   /* no initial value necessary */
     real l2buf[16];
     real l2sum1;
-    integer l2ptr1;   /* initial value 1 */
-    integer l2ptr2;   /* initial value 9 */
-    integer lasti;    /* no initial value necessary */
+    int32_t l2ptr1;   /* initial value 1 */
+    int32_t l2ptr2;   /* initial value 9 */
+    int32_t lasti;    /* no initial value necessary */
     int32_t hyst;   /* initial value FALSE_ */
 
     /* State used by function voicin */
@@ -77,9 +76,9 @@ struct lpc10_encoder_state {
     real snr;
     real maxmin;
     real voice[6]	/* was [2][3] */;   /* initial value is probably unnecessary */
-    integer lbve, lbue, fbve, fbue;
-    integer ofbue, sfbue;
-    integer olbue, slbue;
+    int32_t lbve, lbue, fbve, fbue;
+    int32_t ofbue, sfbue;
+    int32_t olbue, slbue;
     /* Initial values:
 	lbve = 3000;
 	fbve = 3000;
@@ -94,12 +93,12 @@ struct lpc10_encoder_state {
 
     /* State used by function dyptrk */
     real s[60];
-    integer p[120]	/* was [60][2] */;
-    integer ipoint;
+    int32_t p[120]	/* was [60][2] */;
+    int32_t ipoint;
     real alphax;
 
     /* State used by function chanwr */
-    integer isync;
+    int32_t isync;
 
 };
 
@@ -107,30 +106,30 @@ struct lpc10_encoder_state {
 struct lpc10_decoder_state {
 
     /* State used by function decode */
-    integer iptold;   /* initial value 60 */
+    int32_t iptold;   /* initial value 60 */
     int32_t first;   /* initial value TRUE_ */
-    integer ivp2h;
-    integer iovoic;
-    integer iavgp;   /* initial value 60 */
-    integer erate;
-    integer drc[30]	/* was [3][10] */;
-    integer dpit[3];
-    integer drms[3];
+    int32_t ivp2h;
+    int32_t iovoic;
+    int32_t iavgp;   /* initial value 60 */
+    int32_t erate;
+    int32_t drc[30]	/* was [3][10] */;
+    int32_t dpit[3];
+    int32_t drms[3];
 
     /* State used by function synths */
     real buf[360];
-    integer buflen;   /* initial value 180 */
+    int32_t buflen;   /* initial value 180 */
 
     /* State used by function pitsyn */
-    integer ivoico;   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
-    integer ipito;   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
+    int32_t ivoico;   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
+    int32_t ipito;   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
     real rmso;   /* initial value 1.f */
     real rco[10];   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
-    integer jsamp;   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
+    int32_t jsamp;   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
     int32_t first_pitsyn;   /* initial value TRUE_ */
 
     /* State used by function bsynz */
-    integer ipo;
+    int32_t ipo;
     real exc[166];
     real exc2[166];
     real lpi1;
@@ -142,8 +141,8 @@ struct lpc10_decoder_state {
     real rmso_bsynz;
 
     /* State used by function random */
-    integer j;   /* initial value 2 */
-    integer k;   /* initial value 5 */
+    int32_t j;   /* initial value 2 */
+    int32_t k;   /* initial value 5 */
     int16_t y[5];  /* initial value { -21161,-8478,30892,-10216,16950 } */
 
     /* State used by function deemp */

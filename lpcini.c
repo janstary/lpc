@@ -24,7 +24,7 @@ extern int lpcini_(void);
 /* Common Block Declarations */
 
 struct {
-    integer order, lframe;
+    int32_t order, lframe;
     int32_t corrp;
 } contrl_;
 
@@ -65,7 +65,7 @@ struct {
 
 /* Many files which use fdebug are not listed, since it is only used in */
 /* those other files conditionally, to print trace statements. */
-/*      integer fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
+/*      int32_t fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*  LPC order, Frame size, Quantization rate, Bits per frame, */
 /*    Error correction */
 /* Subroutine SETUP is the only place where order is assigned a value, */
@@ -94,7 +94,7 @@ struct {
 /* unvoiced frames, with no change in the coding rate, and no noticeable 
 */
 /* quality difference in the decoded speech. */
-/*      integer quant, nbits */
+/*      int32_t quant, nbits */
 /* *** Read/write: variables for debugging, not needed for LPC algorithm 
 */
 
@@ -120,7 +120,7 @@ struct {
 /* would be of much interest to an application in which LPC10 is */
 /* embedded. */
 /* listl and lincnt are not needed for an embedded LPC10 at all. */
-/*      integer nframe, nunsfm, iclip, maxosp, listl, lincnt */
+/*      int32_t nframe, nunsfm, iclip, maxosp, listl, lincnt */
 /*      common /contrl/ fsi, fso, fpi, fpo, fbi, fbo, pbin, fmsg, fdebug */
 /*      common /contrl/ quant, nbits */
 /*      common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */
@@ -176,7 +176,7 @@ void init_lpc10_encoder_state(struct lpc10_encoder_state *st)
         st->ivbuf[i] = 0.0f;
     }
     st->bias = 0.0f;
-    /* integer osbuf[10];   no initial value necessary */
+    /* int32_t osbuf[10];   no initial value necessary */
     st->osptr = 1;
     for (i = 0; i < 3; i++) {
         st->obound[i] = 0;
@@ -207,7 +207,7 @@ void init_lpc10_encoder_state(struct lpc10_encoder_state *st)
     st->l2sum1 = 0.0f;
     st->l2ptr1 = 1;
     st->l2ptr2 = 9;
-    /* integer lasti;     no initial value necessary */
+    /* int32_t lasti;     no initial value necessary */
     st->hyst = FALSE_;
 
     /* State used by function voicin */
@@ -295,7 +295,7 @@ void init_lpc10_decoder_state(struct lpc10_decoder_state *st)
     /* ipito;    no initial value necessary as long as first_pitsyn is initially TRUE_ */
     st->rmso = 1.0f;
     /* rco[10];    no initial value necessary as long as first_pitsyn is initially TRUE_ */
-    /* integer jsamp;    no initial value necessary as long as first_pitsyn is initially TRUE_ */
+    /* int32_t jsamp;    no initial value necessary as long as first_pitsyn is initially TRUE_ */
     st->first_pitsyn = TRUE_;
 
     /* State used by function bsynz */
