@@ -315,11 +315,11 @@ void init_lpc10_decoder_state(struct lpc10_decoder_state *st)
     /* State used by function random */
     st->j = 2;
     st->k = 5;
-    st->y[0] = (shortint) -21161;
-    st->y[1] = (shortint) -8478;
-    st->y[2] = (shortint) 30892;
-    st->y[3] = (shortint) -10216;
-    st->y[4] = (shortint) 16950;
+    st->y[0] = (int16_t) -21161;
+    st->y[1] = (int16_t) -8478;
+    st->y[2] = (int16_t) 30892;
+    st->y[3] = (int16_t) -10216;
+    st->y[4] = (int16_t) 16950;
 
     /* State used by function deemp */
     st->dei1 = 0.0f;

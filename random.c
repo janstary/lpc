@@ -69,7 +69,7 @@ integer random_(struct lpc10_decoder_state *st)
 
     integer *j;
     integer *k;
-    shortint *y;
+    int16_t *y;
 
     /* System generated locals */
     integer ret_val;

@@ -1,3 +1,6 @@
+#include <stdint.h>
+#include <limits.h>
+
 /*
 
 $Log: lpc10.h,v $
@@ -23,19 +26,9 @@ with anything else, and I'll get on that case before we go stable.
 #ifndef __LPC10_H__
 #define __LPC10_H__
 
-#include <limits.h>
-
 #define LPC10_SAMPLES_PER_FRAME 180
 #define LPC10_BITS_IN_COMPRESSED_FRAME 54
 
-
-#if defined(SHRT_MAX) && defined(SHRT_MIN) && SHRT_MAX==32767 && SHRT_MIN==(-32768)
-typedef short INT16;
-#elif defined(INT_MAX) && defined(INT_MIN) && INT_MAX==32767 && INT_MIN==(-32768)
-typedef int INT16;
-#else
-#error Unable to determine an appropriate definition for INT16.
-#endif
 
 #if defined(INT_MAX) && defined(INT_MIN) && INT_MAX==2147483647 && INT_MIN==(-2147483647-1)
 typedef int INT32;
@@ -56,7 +49,6 @@ typedef long INT32;
 typedef float real;
 typedef INT32 integer;
 typedef INT32 logical;
-typedef INT16 shortint;
 
 struct lpc10_encoder_state {
     /* State used only by function hp100 */
@@ -163,7 +155,7 @@ struct lpc10_decoder_state {
     /* State used by function random */
     integer j;   /* initial value 2 */
     integer k;   /* initial value 5 */
-    shortint y[5];  /* initial value { -21161,-8478,30892,-10216,16950 } */
+    int16_t y[5];  /* initial value { -21161,-8478,30892,-10216,16950 } */
 
     /* State used by function deemp */
     real dei1;

@@ -1,28 +1,3 @@
-/*
-
- * Revision 1.2  1996/08/20  20:26:28  jaf
- * Any typedef defining a type that was used in lpc10_encoder_state or
- * lpc10_decoder_state struct's was commented out here and added to
- * lpc10.h.
- *
- * Revision 1.1  1996/08/19  22:32:13  jaf
- * Initial revision
- *
-
-*/
-
-/*
- * f2c.h
- *
- * SCCS ID:  @(#)f2c.h 1.2 96/05/19
- */
-
-/* f2c.h  --  Standard Fortran to C header file */
-
-/**  barf  [ba:rf]  2.  "He suggested using FORTRAN, and everybody barfed."
-
-        - From The Shogakukan DICTIONARY OF NEW ENGLISH (Second edition) */
-
 #ifndef F2C_INCLUDE
 #define F2C_INCLUDE
 
@@ -31,7 +6,6 @@
 /*typedef long int integer;*/
 /*typedef INT32 integer;*/
 /*typedef short int shortint;*/
-/*typedef INT16 shortint;*/
 /*typedef float real;*/
 /* doublereal only used for function arguments to sqrt, exp, etc. */
 typedef double doublereal;
@@ -151,7 +125,7 @@ typedef struct
 
 union Multitype {       /* for multiple entry points */
         integer1 g;
-        shortint h;
+        int16_t h;
         integer i;
         /* longint j; */
         real r;
