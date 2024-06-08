@@ -104,7 +104,7 @@ extern int pitsyn_(integer *order, integer *voice, integer *pitch, real *rms, re
     /* Initialized data */
 
     real *rmso;
-    logical *first;
+    int32_t *first;
 
     /* System generated locals */
     integer rci_dim1 = 0, rci_offset, i__1, i__2;

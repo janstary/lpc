@@ -4,7 +4,6 @@
 #include "lpc10.h"
 
 /*typedef long int integer;*/
-/*typedef INT32 integer;*/
 /*typedef short int shortint;*/
 /*typedef float real;*/
 /* doublereal only used for function arguments to sqrt, exp, etc. */
@@ -12,8 +11,6 @@ typedef double doublereal;
 /* 32 bits seems wasteful, but there really aren't that many logical
  * variables around, and making them 32 bits could avoid word
  * alignment problems, perhaps.  */
-/*typedef long int logical;*/
-/*typedef INT32 logical;*/
 /* The following types are not used in the translated C code for the
  * LPC-10 coder, but they might be needed by the definitions down
  * below, so they don't cause compilation errors.  */

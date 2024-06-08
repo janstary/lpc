@@ -31,7 +31,7 @@ extern int initlpcdec_(void);
 
 extern struct {
     integer order, lframe;
-    logical corrp;
+    int32_t corrp;
 } contrl_;
 
 #define contrl_1 contrl_

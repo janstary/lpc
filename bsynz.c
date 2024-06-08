@@ -25,7 +25,7 @@ int bsynz_(real *coef, integer *ip, integer *iv, real *sout, real *rms, real *ra
 
 extern struct {
     integer order, lframe;
-    logical corrp;
+    int32_t corrp;
 } contrl_;
 
 #define contrl_1 contrl_

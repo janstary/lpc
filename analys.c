@@ -11,7 +11,7 @@ int analys_(real *speech, integer *voice, integer *pitch, real *rms, real *rc, s
 
 extern struct {
     integer order, lframe;
-    logical corrp;
+    int32_t corrp;
 } contrl_;
 
 #define contrl_1 contrl_

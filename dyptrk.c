@@ -27,7 +27,7 @@ extern int dyptrk_(real *amdf, integer *ltau, integer *minptr, integer *voice, i
 
 extern struct {
     integer order, lframe;
-    logical corrp;
+    int32_t corrp;
 } contrl_;
 
 #define contrl_1 contrl_

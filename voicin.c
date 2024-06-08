@@ -27,7 +27,7 @@ extern int voicin_(integer *vwin, real *inbuf, real *lpbuf, integer *buflim, int
 
 extern struct {
     integer order, lframe;
-    logical corrp;
+    int32_t corrp;
 } contrl_;
 
 #define contrl_1 contrl_
@@ -258,7 +258,7 @@ s*/
     integer *olbue, *slbue;
     real value[9];
     integer zc;
-    logical ot;
+    int32_t ot;
     real qs;
     real *maxmin;
     integer vstate;

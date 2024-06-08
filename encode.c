@@ -19,7 +19,7 @@ extern int encode_(integer *voice, integer *pitch, real *rms, real *rc, integer 
 
 extern struct {
     integer order, lframe;
-    logical corrp;
+    int32_t corrp;
 } contrl_;
 
 #define contrl_1 contrl_

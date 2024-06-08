@@ -110,7 +110,7 @@ static real c_b2 = 1.f;
     real *l2sum1;
     integer *l2ptr1;
     integer *l2ptr2;
-    logical *hyst;
+    int32_t *hyst;
 
     /* System generated locals */
     integer pebuf_offset, i__1;

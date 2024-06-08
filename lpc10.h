@@ -29,16 +29,6 @@ with anything else, and I'll get on that case before we go stable.
 #define LPC10_SAMPLES_PER_FRAME 180
 #define LPC10_BITS_IN_COMPRESSED_FRAME 54
 
-
-#if defined(INT_MAX) && defined(INT_MIN) && INT_MAX==2147483647 && INT_MIN==(-2147483647-1)
-typedef int INT32;
-#elif defined(LONG_MAX) && defined(LONG_MIN) && LONG_MAX==2147483647 && LONG_MIN==(-2147483647-1)
-typedef long INT32;
-#else
-#error Unable to determine an appropriate definition for INT32.
-#endif
-
-
 /* The initial values for every member of this structure is 0, except
    where noted in comments. */
 
@@ -47,8 +37,7 @@ typedef long INT32;
    files. */
 
 typedef float real;
-typedef INT32 integer;
-typedef INT32 logical;
+typedef int32_t integer;
 
 struct lpc10_encoder_state {
     /* State used only by function hp100 */
@@ -81,7 +70,7 @@ struct lpc10_encoder_state {
     integer l2ptr1;   /* initial value 1 */
     integer l2ptr2;   /* initial value 9 */
     integer lasti;    /* no initial value necessary */
-    logical hyst;   /* initial value FALSE_ */
+    int32_t hyst;   /* initial value FALSE_ */
 
     /* State used by function voicin */
     real dither;   /* initial value 20.f */
@@ -119,7 +108,7 @@ struct lpc10_decoder_state {
 
     /* State used by function decode */
     integer iptold;   /* initial value 60 */
-    logical first;   /* initial value TRUE_ */
+    int32_t first;   /* initial value TRUE_ */
     integer ivp2h;
     integer iovoic;
     integer iavgp;   /* initial value 60 */
@@ -138,7 +127,7 @@ struct lpc10_decoder_state {
     real rmso;   /* initial value 1.f */
     real rco[10];   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
     integer jsamp;   /* no initial value necessary as long as first_pitsyn is initially TRUE_ */
-    logical first_pitsyn;   /* initial value TRUE_ */
+    int32_t first_pitsyn;   /* initial value TRUE_ */
 
     /* State used by function bsynz */
     integer ipo;
@@ -216,10 +205,10 @@ struct lpc10_decoder_state {
 
 struct lpc10_encoder_state * create_lpc10_encoder_state (void);
 void init_lpc10_encoder_state (struct lpc10_encoder_state *st);
-int lpc10_encode (real *speech, INT32 *bits, struct lpc10_encoder_state *st);
+int lpc10_encode (real *speech, int32_t *bits, struct lpc10_encoder_state *st);
 
 struct lpc10_decoder_state * create_lpc10_decoder_state (void);
 void init_lpc10_decoder_state (struct lpc10_decoder_state *st);
-int lpc10_decode (INT32 *bits, real *speech, struct lpc10_decoder_state *st);
+int lpc10_decode (int32_t *bits, real *speech, struct lpc10_decoder_state *st);
 
 #endif /* __LPC10_H__ */

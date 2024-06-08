@@ -7,7 +7,7 @@ extern int decode_(integer *ipitv, integer *irms, integer *irc, integer *voice, 
 
 extern struct {
     integer order, lframe;
-    logical corrp;
+    int32_t corrp;
 } contrl_;
 
 #define contrl_1 contrl_
@@ -94,7 +94,7 @@ static integer c__2 = 2;
 {
     /* Initialized data */
 
-    logical *first;
+    int32_t *first;
     static integer ethrs = 2048;
     static integer ethrs1 = 128;
     static integer ethrs2 = 1024;

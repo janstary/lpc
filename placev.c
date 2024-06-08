@@ -84,7 +84,7 @@ extern int placev_(integer *osbuf, integer *osptr, integer *oslen, integer *obou
     integer i__1, i__2;
 
     /* Local variables */
-    logical crit;
+    int32_t crit;
     integer i__, q, osptr1, hrange, lrange;
 
 /*       Arguments */

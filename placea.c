@@ -96,9 +96,9 @@ extern int placea_(integer *ipitch, integer *voibuf, integer *obound, integer *a
     integer i_nint(real *);
 
     /* Local variables */
-    logical allv, winv;
+    int32_t allv, winv;
     integer i__, j, k, l, hrange;
-    logical ephase;
+    int32_t ephase;
     integer lrange;
 
 /*       Arguments */
