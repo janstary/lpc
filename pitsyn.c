@@ -23,7 +23,7 @@
 
 #include "f2c.h"
 
-extern int pitsyn_(int32_t *order, int32_t *voice, int32_t *pitch, real *rms, real *rc, int32_t *lframe, int32_t *ivuv, int32_t *ipiti, real *rmsi, real *rci, int32_t *nout, real *ratio, struct lpc10_decoder_state *st);
+extern int pitsyn_(int32_t *order, int32_t *voice, int32_t *pitch, float *rms, float *rc, int32_t *lframe, int32_t *ivuv, int32_t *ipiti, float *rmsi, float *rci, int32_t *nout, float *ratio, struct lpc10_decoder_state *st);
 
 /* ***************************************************************** */
 
@@ -99,31 +99,31 @@ extern int pitsyn_(int32_t *order, int32_t *voice, int32_t *pitch, real *rms, re
 /*           Always assigned a value. */
 
 /* Subroutine */ int pitsyn_(int32_t *order, int32_t *voice, 
-	int32_t *pitch, real *rms, real *rc, int32_t *lframe, int32_t *ivuv, 
-	int32_t *ipiti, real *rmsi, real *rci, int32_t *nout, real *ratio,
+	int32_t *pitch, float *rms, float *rc, int32_t *lframe, int32_t *ivuv, 
+	int32_t *ipiti, float *rmsi, float *rci, int32_t *nout, float *ratio,
 			       struct lpc10_decoder_state *st)
 {
     /* Initialized data */
 
-    real *rmso;
+    float *rmso;
     int32_t *first;
 
     /* System generated locals */
     int32_t rci_dim1 = 0, rci_offset, i__1, i__2;
-    real r__1;
+    float r__1;
 
     /* Local variables */
-    real alrn, alro, yarc[10], prop;
+    float alrn, alro, yarc[10], prop;
     int32_t i__, j, vflag, jused, lsamp;
     int32_t *jsamp;
-    real slope;
+    float slope;
     int32_t *ipito;
-    real uvpit;
+    float uvpit;
     int32_t ip, nl, ivoice;
     int32_t *ivoico;
     int32_t istart;
-    real *rco;
-    real xxy;
+    float *rco;
+    float xxy;
 
 /*       Arguments */
 
@@ -230,7 +230,7 @@ e */
     } else {
 	vflag = 0;
 	lsamp = *lframe + *jsamp;
-	slope = (*pitch - *ipito) / (real) lsamp;
+	slope = (*pitch - *ipito) / (float) lsamp;
 	*nout = 0;
 	jused = 0;
 	istart = 1;
@@ -244,7 +244,7 @@ e */
 		}
 	    }
 /* SSVC - -   1  ,  1  ,  1 */
-	    slope = (*pitch - *ipito) / (real) lsamp;
+	    slope = (*pitch - *ipito) / (float) lsamp;
 	    ivoice = voice[2];
 	} else {
 	    if (*ivoico != 1) {
@@ -414,7 +414,7 @@ over 16. */
 		    *pitch = ip;
 		    ivuv[*nout] = ivoice;
 		    jused += ip;
-		    prop = (jused - ip / 2) / (real) lsamp;
+		    prop = (jused - ip / 2) / (float) lsamp;
 		    i__2 = *order;
 		    for (j = 1; j <= i__2; ++j) {
 			alro = log((rco[j - 1] + 1) / (1 - rco[j - 1]));
@@ -482,7 +482,7 @@ ge. */
 	    lsamp = *lframe + *jsamp;
 	    slope = 0.f;
 	    ivoice = 0;
-	    uvpit = (real) ((lsamp - istart) / 2);
+	    uvpit = (float) ((lsamp - istart) / 2);
 	    if (uvpit > 90.f) {
 		uvpit /= 2;
 	    }

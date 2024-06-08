@@ -21,11 +21,11 @@
 
 #include "f2c.h"
 
-extern int onset_(real *pebuf, int32_t *osbuf, int32_t *osptr, int32_t *oslen, int32_t *sbufl, int32_t *sbufh, int32_t *lframe, struct lpc10_encoder_state *st);
+extern int onset_(float *pebuf, int32_t *osbuf, int32_t *osptr, int32_t *oslen, int32_t *sbufl, int32_t *sbufh, int32_t *lframe, struct lpc10_encoder_state *st);
 
 /* Table of constant values */
 
-static real c_b2 = 1.f;
+static float c_b2 = 1.f;
 
 /* ****************************************************************** */
 
@@ -98,32 +98,32 @@ static real c_b2 = 1.f;
 /* you want to switch to using a new audio stream for this subroutine, or */
 /* reinitialize its state for any other reason, call the ENTRY INITONSET. */
 
-/* Subroutine */ int onset_(real *pebuf, int32_t *osbuf, int32_t *
+/* Subroutine */ int onset_(float *pebuf, int32_t *osbuf, int32_t *
 	osptr, int32_t *oslen, int32_t *sbufl, int32_t *sbufh, int32_t *
 	lframe, struct lpc10_encoder_state *st)
 {
     /* Initialized data */
 
-    real *n;
-    real *d__;
-    real *l2buf;
-    real *l2sum1;
+    float *n;
+    float *d__;
+    float *l2buf;
+    float *l2sum1;
     int32_t *l2ptr1;
     int32_t *l2ptr2;
     int32_t *hyst;
 
     /* System generated locals */
     int32_t pebuf_offset, i__1;
-    real r__1;
+    float r__1;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    double r_sign(float *, float *);
 
     /* Local variables */
     int32_t i__;
     int32_t *lasti;
-    real l2sum2;
-    real *fpc;
+    float l2sum2;
+    float *fpc;
 
 /*       Arguments */
 

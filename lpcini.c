@@ -200,7 +200,7 @@ void init_lpc10_encoder_state(struct lpc10_encoder_state *st)
     /* State used by function onset */
     st->n = 0.0f;
     st->d__ = 1.0f;
-    /* real fpc;    no initial value necessary */
+    /* float fpc;    no initial value necessary */
     for (i = 0; i < 16; i++) {
         st->l2buf[i] = 0.0f;
     }
@@ -224,7 +224,7 @@ void init_lpc10_encoder_state(struct lpc10_encoder_state *st)
     st->lbue = 93;
     st->olbue = 93;
     st->slbue = 93;
-    st->snr = (real) (st->fbve / st->fbue << 6);
+    st->snr = (float) (st->fbve / st->fbue << 6);
 
     /* State used by function dyptrk */
     for (i = 0; i < 60; i++) {

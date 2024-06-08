@@ -13,11 +13,11 @@
 
 #include "f2c.h"
 
-extern int vparms_(int32_t *vwin, real *inbuf, real *lpbuf, int32_t *buflim, int32_t *half, real *dither, int32_t *mintau, int32_t *zc, int32_t *lbe, int32_t *fbe, real *qs, real *rc1, real *ar_b__, real *ar_f__);
+extern int vparms_(int32_t *vwin, float *inbuf, float *lpbuf, int32_t *buflim, int32_t *half, float *dither, int32_t *mintau, int32_t *zc, int32_t *lbe, int32_t *fbe, float *qs, float *rc1, float *ar_b__, float *ar_f__);
 
 /* Table of constant values */
 
-static real c_b2 = 1.f;
+static float c_b2 = 1.f;
 
 /* ********************************************************************* */
 
@@ -104,24 +104,24 @@ static real c_b2 = 1.f;
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int vparms_(int32_t *vwin, real *inbuf, real *lpbuf, int32_t 
-	*buflim, int32_t *half, real *dither, int32_t *mintau, int32_t *zc, 
-	int32_t *lbe, int32_t *fbe, real *qs, real *rc1, real *ar_b__, real *
+/* Subroutine */ int vparms_(int32_t *vwin, float *inbuf, float *lpbuf, int32_t 
+	*buflim, int32_t *half, float *dither, int32_t *mintau, int32_t *zc, 
+	int32_t *lbe, int32_t *fbe, float *qs, float *rc1, float *ar_b__, float *
 	ar_f__)
 {
     /* System generated locals */
     int32_t inbuf_offset, lpbuf_offset, i__1;
-    real r__1, r__2;
+    float r__1, r__2;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
-    int32_t i_nint(real *);
+    double r_sign(float *, float *);
+    int32_t i_nint(float *);
 
     /* Local variables */
     int32_t vlen, stop, i__;
-    real e_pre__;
+    float e_pre__;
     int32_t start;
-    real ap_rms__, e_0__, oldsgn, lp_rms__, e_b__, e_f__, r_b__, r_f__, e0ap;
+    float ap_rms__, e_0__, oldsgn, lp_rms__, e_b__, e_f__, r_b__, r_f__, e0ap;
 
 /*       Arguments */
 /*       Local variables that need not be saved */
@@ -212,7 +212,7 @@ is)*/
     *ar_f__ = r_f__ / max(e_f__,1.f) * (r_f__ / max(e_0__,1.f));
 /*   Normalize ZC, LBE, and FBE to old fixed window length of 180. */
 /*   (The fraction 90/VLEN has a range of .58 to 1) */
-    r__2 = (real) (*zc << 1);
+    r__2 = (float) (*zc << 1);
     r__1 = r__2 * (90.f / vlen);
     *zc = i_nint(&r__1);
 /* Computing MIN */

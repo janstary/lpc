@@ -57,9 +57,9 @@ int32_t pow_ii(int32_t *ap, int32_t *bp)
 	}
 
 
-double r_sign(real *a, real *b);
+double r_sign(float *a, float *b);
 
-double r_sign(real *a, real *b)
+double r_sign(float *a, float *b)
 {
 double x;
 x = (*a >= 0 ? *a : - *a);
@@ -67,11 +67,11 @@ return( *b >= 0 ? x : -x);
 }
 
 
-int32_t i_nint(real *x);
+int32_t i_nint(float *x);
 
 #undef abs
 #include "math.h"
-int32_t i_nint(real *x)
+int32_t i_nint(float *x)
 {
 return( (*x)>=0 ?
 	floor(*x + .5) : -floor(.5 - *x) );

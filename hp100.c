@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern int hp100_(real *speech, int32_t *start, int32_t *end,
+extern int hp100_(float *speech, int32_t *start, int32_t *end,
 		  struct lpc10_encoder_state *st);
 extern int inithp100_(void);
 
@@ -48,7 +48,7 @@ extern int inithp100_(void);
 /* you want to switch to using a new audio stream for this filter, or */
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITHP100. */
-/* Subroutine */ int hp100_(real *speech, int32_t *start, int32_t *end,
+/* Subroutine */ int hp100_(float *speech, int32_t *start, int32_t *end,
 	struct lpc10_encoder_state *st)
 {
     /* Temporary local copies of variables in lpc10_encoder_state.
@@ -57,17 +57,17 @@ extern int inithp100_(void);
        variables in the lpc10_encoder_state structure.  It is just a
        guess that it will be faster. */
 
-    real z11;
-    real z21;
-    real z12;
-    real z22;
+    float z11;
+    float z21;
+    float z12;
+    float z22;
 
     /* System generated locals */
     int32_t i__1;
 
     /* Local variables */
     int32_t i__;
-    real si, err;
+    float si, err;
 
 /*       Arguments */
 /*       Local variables that need not be saved */

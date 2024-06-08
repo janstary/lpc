@@ -24,7 +24,7 @@
 
 #include "f2c.h"
 
-extern int lpcdec_(int32_t *bits, real *speech);
+extern int lpcdec_(int32_t *bits, float *speech);
 extern int initlpcdec_(void);
 
 /* Common Block Declarations */
@@ -77,19 +77,19 @@ static int32_t c__10 = 10;
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITLPCDEC. */
 
-/* Subroutine */ int lpc10_decode(int32_t *bits, real *speech,
+/* Subroutine */ int lpc10_decode(int32_t *bits, float *speech,
 				  struct lpc10_decoder_state *st)
 {
     int32_t irms, voice[2], pitch, ipitv;
     extern /* Subroutine */ int decode_(int32_t *, int32_t *, int32_t *, 
-	    int32_t *, int32_t *, real *, real *, struct lpc10_decoder_state *);
-    real rc[10];
+	    int32_t *, int32_t *, float *, float *, struct lpc10_decoder_state *);
+    float rc[10];
     extern /* Subroutine */ int chanrd_(int32_t *, int32_t *, int32_t *, 
 	    int32_t *, int32_t *), synths_(int32_t *, 
-	    int32_t *, real *, real *, real *, int32_t *,
+	    int32_t *, float *, float *, float *, int32_t *,
 					   struct lpc10_decoder_state *);
     int32_t irc[10], len;
-    real rms;
+    float rms;
 
 
 /*   LPC Configuration parameters: */

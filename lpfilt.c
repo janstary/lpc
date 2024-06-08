@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int lpfilt_(real *inbuf, real *lpbuf, int32_t *len, int32_t *nsamp);
+extern int lpfilt_(float *inbuf, float *lpbuf, int32_t *len, int32_t *nsamp);
 
 /* *********************************************************************** */
 
@@ -53,7 +53,7 @@ extern int lpfilt_(real *inbuf, real *lpbuf, int32_t *len, int32_t *nsamp);
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int lpfilt_(real *inbuf, real *lpbuf, int32_t *len, int32_t *
+/* Subroutine */ int lpfilt_(float *inbuf, float *lpbuf, int32_t *len, int32_t *
 	nsamp)
 {
     /* System generated locals */
@@ -61,7 +61,7 @@ extern int lpfilt_(real *inbuf, real *lpbuf, int32_t *len, int32_t *nsamp);
 
     /* Local variables */
     int32_t j;
-    real t;
+    float t;
 
 /* 	Arguments */
 /* 	Parameters/constants */

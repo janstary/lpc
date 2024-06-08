@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int preemp_(real *inbuf, real *pebuf, int32_t *nsamp, real *coef, real *z__);
+extern int preemp_(float *inbuf, float *pebuf, int32_t *nsamp, float *coef, float *z__);
 
 /* ******************************************************************* */
 
@@ -52,14 +52,14 @@ extern int preemp_(real *inbuf, real *pebuf, int32_t *nsamp, real *coef, real *z
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int preemp_(real *inbuf, real *pebuf, int32_t *nsamp, real *
-	coef, real *z__)
+/* Subroutine */ int preemp_(float *inbuf, float *pebuf, int32_t *nsamp, float *
+	coef, float *z__)
 {
     /* System generated locals */
     int32_t i__1;
 
     /* Local variables */
-    real temp;
+    float temp;
     int32_t i__;
 
 /*       Arguments */

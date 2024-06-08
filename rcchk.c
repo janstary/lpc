@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int rcchk_(int32_t *order, real *rc1f, real *rc2f);
+extern int rcchk_(int32_t *order, float *rc1f, float *rc2f);
 
 /* ********************************************************************* */
 
@@ -52,11 +52,11 @@ extern int rcchk_(int32_t *order, real *rc1f, real *rc2f);
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int rcchk_(int32_t *order, real *rc1f, real *rc2f)
+/* Subroutine */ int rcchk_(int32_t *order, float *rc1f, float *rc2f)
 {
     /* System generated locals */
     int32_t i__1;
-    real r__1;
+    float r__1;
 
     /* Local variables */
     int32_t i__;

@@ -15,7 +15,7 @@
 
 #include "f2c.h"
 
-extern int irc2pc_(real *rc, real *pc, int32_t *order, real *gprime, real *g2pass);
+extern int irc2pc_(float *rc, float *pc, int32_t *order, float *gprime, float *g2pass);
 
 /* ***************************************************************** */
 
@@ -54,14 +54,14 @@ extern int irc2pc_(real *rc, real *pc, int32_t *order, real *gprime, real *g2pas
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int irc2pc_(real *rc, real *pc, int32_t *order, real *gprime,
-	 real *g2pass)
+/* Subroutine */ int irc2pc_(float *rc, float *pc, int32_t *order, float *gprime,
+	 float *g2pass)
 {
     /* System generated locals */
     int32_t i__1, i__2;
 
     /* Local variables */
-    real temp[10];
+    float temp[10];
     int32_t i__, j;
 
 /* 	Arguments */

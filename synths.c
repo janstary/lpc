@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern int synths_(int32_t *voice, int32_t *pitch, real *rms, real *rc, real *speech, int32_t *k, struct lpc10_decoder_state *st);
+extern int synths_(int32_t *voice, int32_t *pitch, float *rms, float *rc, float *speech, int32_t *k, struct lpc10_decoder_state *st);
 
 /* Common Block Declarations */
 
@@ -34,7 +34,7 @@ extern struct {
 
 /* Table of constant values */
 
-static real c_b2 = .7f;
+static float c_b2 = .7f;
 
 /* ***************************************************************** */
 
@@ -126,33 +126,33 @@ static real c_b2 = .7f;
 /*  K      - Number of samples placed into array SPEECH. */
 /*           This is always MAXFRM. */
 
-/* Subroutine */ int synths_(int32_t *voice, int32_t *pitch, real *
-	rms, real *rc, real *speech, int32_t *k, struct lpc10_decoder_state *st)
+/* Subroutine */ int synths_(int32_t *voice, int32_t *pitch, float *
+	rms, float *rc, float *speech, int32_t *k, struct lpc10_decoder_state *st)
 {
     /* Initialized data */
 
-    real *buf;
+    float *buf;
     int32_t *buflen;
 
     /* System generated locals */
     int32_t i__1;
-    real r__1, r__2;
+    float r__1, r__2;
 
     /* Local variables */
-    real rmsi[16];
+    float rmsi[16];
     int32_t nout, ivuv[16], i__, j;
-    extern /* Subroutine */ int deemp_(real *, int32_t *, struct lpc10_decoder_state *);
-    real ratio;
+    extern /* Subroutine */ int deemp_(float *, int32_t *, struct lpc10_decoder_state *);
+    float ratio;
     int32_t ipiti[16];
-    extern int bsynz_(real *, int32_t *, 
-	    int32_t *, real *, real *, real *, real *, struct lpc10_decoder_state *), irc2pc_(real *, real *
-	    , int32_t *, real *, real *);
-    real g2pass;
-    real pc[10];
-    extern /* Subroutine */ int pitsyn_(int32_t *, int32_t *, int32_t *, real 
-	    *, real *, int32_t *, int32_t *, int32_t *, real *, real *, 
-	    int32_t *, real *, struct lpc10_decoder_state *);
-    real rci[160]	/* was [10][16] */;
+    extern int bsynz_(float *, int32_t *, 
+	    int32_t *, float *, float *, float *, float *, struct lpc10_decoder_state *), irc2pc_(float *, float *
+	    , int32_t *, float *, float *);
+    float g2pass;
+    float pc[10];
+    extern /* Subroutine */ int pitsyn_(int32_t *, int32_t *, int32_t *, float 
+	    *, float *, int32_t *, int32_t *, int32_t *, float *, float *, 
+	    int32_t *, float *, struct lpc10_decoder_state *);
+    float rci[160]	/* was [10][16] */;
 
 /*   LPC Configuration parameters: */
 /* Frame size, Prediction order, Pitch period */

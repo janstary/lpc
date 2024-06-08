@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int invert_(int32_t *order, real *phi, real *psi, real *rc);
+extern int invert_(int32_t *order, float *phi, float *psi, float *rc);
 
 /* **************************************************************** */
 
@@ -63,16 +63,16 @@ extern int invert_(int32_t *order, real *phi, real *psi, real *rc);
 /*  NOTE: Temporary matrix V is not needed and may be replaced */
 /*    by PHI if the original PHI values do not need to be preserved. */
 
-/* Subroutine */ int invert_(int32_t *order, real *phi, real *psi, real *rc)
+/* Subroutine */ int invert_(int32_t *order, float *phi, float *psi, float *rc)
 {
     /* System generated locals */
     int32_t phi_dim1, phi_offset, i__1, i__2, i__3;
-    real r__1, r__2;
+    float r__1, r__2;
 
     /* Local variables */
-    real save;
+    float save;
     int32_t i__, j, k;
-    real v[100]	/* was [10][10] */;
+    float v[100]	/* was [10][10] */;
 
 /*       Arguments */
 

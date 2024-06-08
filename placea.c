@@ -90,10 +90,10 @@ extern int placea_(int32_t *ipitch, int32_t *voibuf, int32_t *obound, int32_t *a
 	int32_t *lframe, int32_t *maxwin)
 {
     /* System generated locals */
-    real r__1;
+    float r__1;
 
     /* Builtin functions */
-    int32_t i_nint(real *);
+    int32_t i_nint(float *);
 
     /* Local variables */
     int32_t allv, winv;
@@ -155,7 +155,7 @@ t. */
 	k = (vwin[(*af << 1) + 1] + vwin[(*af << 1) + 2] + 1 - l) / 2;
 /* Choose the actual location to be the pitch multiple closest to this
 . */
-	r__1 = (real) (k - i__) / *ipitch;
+	r__1 = (float) (k - i__) / *ipitch;
 	awin[(*af << 1) + 1] = i__ + i_nint(&r__1) * *ipitch;
 	awin[(*af << 1) + 2] = awin[(*af << 1) + 1] + l - 1;
 /* If there is an onset bounding the right of the voicing window and t

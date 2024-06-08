@@ -24,7 +24,7 @@
 
 #include "f2c.h"
 
-extern int lpcenc_(real *speech, int32_t *bits);
+extern int lpcenc_(float *speech, int32_t *bits);
 extern int initlpcenc_(void);
 
 /* Table of constant values */
@@ -61,7 +61,7 @@ static int32_t c__10 = 10;
 /* Encode one frame of 180 speech samples to 54 bits. */
 
 /* Input: */
-/*  SPEECH - Speech encoded as real values in the range [-1,+1]. */
+/*  SPEECH - Speech encoded as float values in the range [-1,+1]. */
 /*           Indices 1 through 180 read, and modified (by PREPRO). */
 /* Output: */
 /*  BITS   - 54 encoded bits, stored 1 per array element. */
@@ -72,19 +72,19 @@ static int32_t c__10 = 10;
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITLPCENC. */
 
-/* Subroutine */ int lpc10_encode(real *speech, int32_t *bits,
+/* Subroutine */ int lpc10_encode(float *speech, int32_t *bits,
 				  struct lpc10_encoder_state *st)
 {
     int32_t irms, voice[2], pitch, ipitv;
-    real rc[10];
-    extern /* Subroutine */ int encode_(int32_t *, int32_t *, real *, real *, 
+    float rc[10];
+    extern /* Subroutine */ int encode_(int32_t *, int32_t *, float *, float *, 
 	    int32_t *, int32_t *, int32_t *), chanwr_(int32_t *, int32_t *, 
 	    int32_t *, int32_t *, int32_t *, struct lpc10_encoder_state *),
-            analys_(real *, int32_t *, 
-	    int32_t *, real *, real *, struct lpc10_encoder_state *),
-            prepro_(real *, int32_t *, struct lpc10_encoder_state *);
+            analys_(float *, int32_t *, 
+	    int32_t *, float *, float *, struct lpc10_encoder_state *),
+            prepro_(float *, int32_t *, struct lpc10_encoder_state *);
     int32_t irc[10];
-    real rms;
+    float rms;
 
 /*       Arguments */
 

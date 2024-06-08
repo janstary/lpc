@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int tbdm_(real *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, real *amdf, int32_t *minptr, int32_t *maxptr, int32_t *mintau);
+extern int tbdm_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, float *amdf, int32_t *minptr, int32_t *maxptr, int32_t *mintau);
 
 /* ********************************************************************** */
 
@@ -63,22 +63,22 @@ extern int tbdm_(real *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, real
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int tbdm_(real *speech, int32_t *lpita, int32_t *tau, 
-	int32_t *ltau, real *amdf, int32_t *minptr, int32_t *maxptr, int32_t *
+/* Subroutine */ int tbdm_(float *speech, int32_t *lpita, int32_t *tau, 
+	int32_t *ltau, float *amdf, int32_t *minptr, int32_t *maxptr, int32_t *
 	mintau)
 {
     /* System generated locals */
     int32_t i__1, i__2, i__3, i__4;
 
     /* Local variables */
-    real amdf2[6];
+    float amdf2[6];
     int32_t minp2, ltau2, maxp2, i__;
-    extern /* Subroutine */ int difmag_(real *, int32_t *, int32_t *, int32_t 
-	    *, int32_t *, real *, int32_t *, int32_t *);
+    extern /* Subroutine */ int difmag_(float *, int32_t *, int32_t *, int32_t 
+	    *, int32_t *, float *, int32_t *, int32_t *);
     int32_t minamd, ptr, tau2[6];
 
 /* 	Arguments */
-/* 	REAL SPEECH(LPITA+TAU(LTAU)), AMDF(LTAU) */
+/* 	float SPEECH(LPITA+TAU(LTAU)), AMDF(LTAU) */
 /*   Stupid TOAST doesn't understand expressions */
 /*       Local variables that need not be saved */
 /*       Local state */
@@ -117,7 +117,7 @@ extern int tbdm_(real *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, real
     if (ltau2 > 0) {
 	difmag_(&speech[1], lpita, tau2, &ltau2, &tau[*ltau], amdf2, &minp2, &
 		maxp2);
-	if (amdf2[minp2 - 1] < (real) minamd) {
+	if (amdf2[minp2 - 1] < (float) minamd) {
 	    *mintau = tau2[minp2 - 1];
 	    minamd = amdf2[minp2 - 1];
 	}
@@ -135,14 +135,14 @@ extern int tbdm_(real *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, real
 	}
 	difmag_(&speech[1], lpita, tau2, &ltau2, &tau[*ltau], amdf2, &minp2, &
 		maxp2);
-	if (amdf2[minp2 - 1] < (real) minamd) {
+	if (amdf2[minp2 - 1] < (float) minamd) {
 	    *mintau = tau2[minp2 - 1];
 	    minamd = amdf2[minp2 - 1];
 	    *minptr += -20;
 	}
     }
 /*   Force minimum of the AMDF array to the high resolution minimum */
-    amdf[*minptr] = (real) minamd;
+    amdf[*minptr] = (float) minamd;
 /*   Find maximum of AMDF within 1/2 octave of minimum */
 /* Computing MAX */
     i__2 = *minptr - 5;

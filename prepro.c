@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern int prepro_(real *speech, int32_t *length,
+extern int prepro_(float *speech, int32_t *length,
 		   struct lpc10_encoder_state *st);
 
 /* Table of constant values */
@@ -70,10 +70,10 @@ static int32_t c__1 = 1;
 /* stream for this filter, or reinitialize its state for any other */
 /* reason, call the ENTRY INITPREPRO. */
 
-/* Subroutine */ int prepro_(real *speech, int32_t *length,
+/* Subroutine */ int prepro_(float *speech, int32_t *length,
 			     struct lpc10_encoder_state *st)
 {
-    extern /* Subroutine */ int hp100_(real *, int32_t *, int32_t *, struct lpc10_encoder_state *);
+    extern /* Subroutine */ int hp100_(float *, int32_t *, int32_t *, struct lpc10_encoder_state *);
 
 /*       Arguments */
 /*   High Pass Filter at 100 Hz */

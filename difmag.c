@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int difmag_(real *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, int32_t *maxlag, real *amdf, int32_t *minptr, int32_t *maxptr);
+extern int difmag_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, int32_t *maxlag, float *amdf, int32_t *minptr, int32_t *maxptr);
 
 /* ********************************************************************** */
 
@@ -60,17 +60,17 @@ extern int difmag_(real *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, in
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int difmag_(real *speech, int32_t *lpita, int32_t *tau, 
-	int32_t *ltau, int32_t *maxlag, real *amdf, int32_t *minptr, int32_t *
+/* Subroutine */ int difmag_(float *speech, int32_t *lpita, int32_t *tau, 
+	int32_t *ltau, int32_t *maxlag, float *amdf, int32_t *minptr, int32_t *
 	maxptr)
 {
     /* System generated locals */
     int32_t i__1, i__2;
-    real r__1;
+    float r__1;
 
     /* Local variables */
     int32_t i__, j, n1, n2;
-    real sum;
+    float sum;
 
 /*       Arguments */
 /*       Local variables that need not be saved */

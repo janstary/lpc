@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int encode_(int32_t *voice, int32_t *pitch, real *rms, real *rc, int32_t *ipitch, int32_t *irms, int32_t *irc);
+extern int encode_(int32_t *voice, int32_t *pitch, float *rms, float *rc, int32_t *ipitch, int32_t *irms, int32_t *irc);
 
 /* Common Block Declarations */
 
@@ -80,7 +80,7 @@ static int32_t c__2 = 2;
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int encode_(int32_t *voice, int32_t *pitch, real *rms, real *
+/* Subroutine */ int encode_(int32_t *voice, int32_t *pitch, float *rms, float *
 	rc, int32_t *ipitch, int32_t *irms, int32_t *irc)
 {
     /* Initialized data */
@@ -91,7 +91,7 @@ static int32_t c__2 = 2;
 	    81,85,69,77,73,75,74,78,70,71,67,99,97,113,112,114,98,106,104,108,
 	    100,101,76 };
     static int32_t enadd[8] = { 1920,-768,2432,1280,3584,1536,2816,-1152 };
-    static real enscl[8] = { .0204f,.0167f,.0145f,.0147f,.0143f,.0135f,.0125f,
+    static float enscl[8] = { .0204f,.0167f,.0145f,.0147f,.0143f,.0135f,.0125f,
 	    .0112f };
     static int32_t enbits[8] = { 6,5,4,4,4,4,3,3 };
     static int32_t entab6[64] = { 0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,

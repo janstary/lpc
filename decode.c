@@ -1,7 +1,7 @@
 #include "f2c.h"
 #include "middle.h"
 
-extern int decode_(int32_t *ipitv, int32_t *irms, int32_t *irc, int32_t *voice, int32_t *pitch, real *rms, real *rc, struct lpc10_decoder_state *st);
+extern int decode_(int32_t *ipitv, int32_t *irms, int32_t *irc, int32_t *voice, int32_t *pitch, float *rms, float *rc, struct lpc10_decoder_state *st);
 
 /* Common Block Declarations */
 
@@ -89,7 +89,7 @@ static int32_t c__2 = 2;
 /* INITDECODE. */
 
 /* Subroutine */ int decode_(int32_t *ipitv, int32_t *irms, 
-	int32_t *irc, int32_t *voice, int32_t *pitch, real *rms, real *rc,
+	int32_t *irc, int32_t *voice, int32_t *pitch, float *rms, float *rc,
 			     struct lpc10_decoder_state *st)
 {
     /* Initialized data */
@@ -103,7 +103,7 @@ static int32_t c__2 = 2;
 	    25480,16640,1560,1560,1560,16640,1816,1563,1560,24960,24960,24859,
 	    24856,26001,25881,25915,25913,1560,1560,7800,3640,1561,1561,3643,
 	    3641 };
-    static real corth[32]	/* was [4][8] */ = { 32767.f,10.f,5.f,0.f,
+    static float corth[32]	/* was [4][8] */ = { 32767.f,10.f,5.f,0.f,
 	    32767.f,8.f,4.f,0.f,32.f,6.4f,3.2f,0.f,32.f,6.4f,3.2f,0.f,32.f,
 	    11.2f,6.4f,0.f,32.f,11.2f,6.4f,0.f,16.f,5.6f,3.2f,0.f,16.f,5.6f,
 	    3.2f,0.f };
@@ -120,7 +120,7 @@ static int32_t c__2 = 2;
     static int32_t detab7[32] = { 4,11,18,25,32,39,46,53,60,66,72,77,82,87,92,
 	    96,101,104,108,111,114,115,117,119,121,122,123,124,125,126,127,
 	    127 };
-    static real descl[8] = { .6953f,.625f,.5781f,.5469f,.5312f,.5391f,.4688f,
+    static float descl[8] = { .6953f,.625f,.5781f,.5469f,.5312f,.5391f,.4688f,
 	    .3828f };
     int32_t *ivp2h;
     static int32_t deadd[8] = { 1152,-2816,-1536,-3584,-1280,-2432,768,-1920 }
@@ -404,15 +404,15 @@ static int32_t c__2 = 2;
     *pitch = dpit[1];
 /*  If bit 2 of ICORF is set then smooth RMS and RC's, */
     if ((icorf & bit[1]) != 0) {
-	if ((i__1 = drms[1] - drms[0], (real) abs(i__1)) >= corth[ixcor + 3] 
-		&& (i__2 = drms[1] - drms[2], (real) abs(i__2)) >= corth[
+	if ((i__1 = drms[1] - drms[0], (float) abs(i__1)) >= corth[ixcor + 3] 
+		&& (i__2 = drms[1] - drms[2], (float) abs(i__2)) >= corth[
 		ixcor + 3]) {
 	    *irms = middle(drms[2], drms[1], drms[0]);
 	}
 	for (i__ = 1; i__ <= 6; ++i__) {
-	    if ((i__1 = drc[i__ * 3 - 2] - drc[i__ * 3 - 3], (real) abs(i__1))
+	    if ((i__1 = drc[i__ * 3 - 2] - drc[i__ * 3 - 3], (float) abs(i__1))
 		     >= corth[ixcor + ((i__ + 2) << 2) - 5] && (i__2 = drc[i__ *
-		     3 - 2] - drc[i__ * 3 - 1], (real) abs(i__2)) >= corth[
+		     3 - 2] - drc[i__ * 3 - 1], (float) abs(i__2)) >= corth[
 		    ixcor + ((i__ + 2) << 2) - 5]) {
 		irc[i__] = middle(drc[i__ * 3 - 1], drc[i__ * 3 - 2], drc[i__ * 3 - 3]);
 	    }
@@ -420,8 +420,8 @@ static int32_t c__2 = 2;
     }
 /*  If bit 3 of ICORF is set then smooth pitch */
     if ((icorf & bit[2]) != 0) {
-	if ((i__1 = dpit[1] - dpit[0], (real) abs(i__1)) >= corth[ixcor - 1] 
-		&& (i__2 = dpit[1] - dpit[2], (real) abs(i__2)) >= corth[
+	if ((i__1 = dpit[1] - dpit[0], (float) abs(i__1)) >= corth[ixcor - 1] 
+		&& (i__2 = dpit[1] - dpit[2], (float) abs(i__2)) >= corth[
 		ixcor - 1]) {
 	    *pitch = middle(dpit[2], dpit[1], dpit[0]);
 	}
@@ -484,7 +484,7 @@ L900:
 /* 	IF (LISTL.GE.3) WRITE(FDEBUG,811) IRMS, (IRC(I),I=1,ORDER) */
 /* 811	FORMAT(1X,'<<DECODE OUT>>',T45,I4,1X,10I8) */
 /*  Scale RMS and RC's to reals */
-    *rms = (real) (*irms);
+    *rms = (float) (*irms);
     i__1 = contrl_1.order;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	rc[i__] = irc[i__] / 16384.f;

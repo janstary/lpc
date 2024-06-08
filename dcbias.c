@@ -13,7 +13,7 @@
 
 #include "f2c.h"
 
-extern int dcbias_(int32_t *len, real *speech, real *sigout);
+extern int dcbias_(int32_t *len, float *speech, float *sigout);
 
 /* ********************************************************************* */
 
@@ -49,13 +49,13 @@ extern int dcbias_(int32_t *len, real *speech, real *sigout);
 
 /* This subroutine has no local state. */
 
-/* Subroutine */ int dcbias_(int32_t *len, real *speech, real *sigout)
+/* Subroutine */ int dcbias_(int32_t *len, float *speech, float *sigout)
 {
     /* System generated locals */
     int32_t i__1;
 
     /* Local variables */
-    real bias;
+    float bias;
     int32_t i__;
 
 /* 	Arguments */

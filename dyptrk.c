@@ -21,7 +21,7 @@
 
 #include "f2c.h"
 
-extern int dyptrk_(real *amdf, int32_t *ltau, int32_t *minptr, int32_t *voice, int32_t *pitch, int32_t *midx, struct lpc10_encoder_state *st);
+extern int dyptrk_(float *amdf, int32_t *ltau, int32_t *minptr, int32_t *voice, int32_t *pitch, int32_t *midx, struct lpc10_encoder_state *st);
 
 /* Common Block Declarations */
 
@@ -98,25 +98,25 @@ extern struct {
 /* reinitialize its state for any other reason, call the ENTRY */
 /* INITDYPTRK. */
 
-/* Subroutine */ int dyptrk_(real *amdf, int32_t *ltau, int32_t *
+/* Subroutine */ int dyptrk_(float *amdf, int32_t *ltau, int32_t *
 	minptr, int32_t *voice, int32_t *pitch, int32_t *midx,
 			       struct lpc10_encoder_state *st)
 {
     /* Initialized data */
 
-    real *s;
+    float *s;
     int32_t *p;
     int32_t *ipoint;
-    real *alphax;
+    float *alphax;
 
     /* System generated locals */
     int32_t i__1;
 
     /* Local variables */
     int32_t pbar;
-    real sbar;
+    float sbar;
     int32_t iptr, i__, j;
-    real alpha, minsc, maxsc;
+    float alpha, minsc, maxsc;
 
 /*       Arguments */
 
