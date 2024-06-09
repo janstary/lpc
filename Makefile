@@ -1,4 +1,4 @@
-PREFIX	= /usr/local/
+PREFIX	= /usr/local
 LIBDIR	= $(PREFIX)/lib/
 MANDIR	= $(PREFIX)/man/
 INCDIR	= $(PREFIX)/include/
