@@ -22,7 +22,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int lpcdec_(int32_t *bits, float *speech);
 extern int initlpcdec_(void);

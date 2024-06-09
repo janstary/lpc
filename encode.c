@@ -11,7 +11,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int encode_(int32_t *voice, int32_t *pitch, float *rms, float *rc, int32_t *ipitch, int32_t *irms, int32_t *irc);
 

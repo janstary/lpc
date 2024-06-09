@@ -19,7 +19,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int hp100_(float *speech, int32_t *start, int32_t *end,
 		  struct lpc10_encoder_state *st);

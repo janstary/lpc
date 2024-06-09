@@ -11,7 +11,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int lpfilt_(float *inbuf, float *lpbuf, int32_t *len, int32_t *nsamp);
 

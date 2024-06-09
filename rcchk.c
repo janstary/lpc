@@ -1,4 +1,4 @@
-#include "f2c.h"
+#include "lpc.h"
 
 extern int rcchk_(int32_t *order, float *rc1f, float *rc2f);
 

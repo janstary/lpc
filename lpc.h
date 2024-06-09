@@ -1,40 +1,21 @@
 #include <stdint.h>
 #include <limits.h>
 
-/*
-
-$Log: lpc10.h,v $
-Revision 1.3  2008/03/21 13:34:21  robs
-fix (I hope) [1913986] Error during make of static sox
-
-Revision 1.2  2007/12/26 16:12:42  robs
-support out-of-source-build
-
-Revision 1.1  2007/04/16 21:57:22  rrt
-LPC-10 support, documentation still to come; I wanted to land the code
-before 14.0.0 went into test, and I'll be busy tomorrow.
-
-Not highly tested either, but it's just a format, doesn't interfere
-with anything else, and I'll get on that case before we go stable.
-
- * Revision 1.1  1996/08/19  22:47:31  jaf
- * Initial revision
- *
-
-*/
-
 #ifndef __LPC10_H__
 #define __LPC10_H__
+
+#define TRUE	1
+#define FALSE	0
+
+#define abs(x) ((x) >= 0 ? (x) : -(x))
+#define min(a,b) ((a) <= (b) ? (a) : (b))
+#define max(a,b) ((a) >= (b) ? (a) : (b))
 
 #define LPC10_SAMPLES_PER_FRAME 180
 #define LPC10_BITS_IN_COMPRESSED_FRAME 54
 
 /* The initial values for every member of this structure is 0, except
    where noted in comments. */
-
-/* These two lines are copied from f2c.h.  There should be a more
-   elegant way of doing this than having the same declarations in two
-   files. */
 
 struct lpc10_encoder_state {
     /* State used only by function hp100 */

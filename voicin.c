@@ -21,7 +21,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int voicin_(int32_t *vwin, float *inbuf, float *lpbuf, int32_t *buflim, int32_t *half, float *minamd, float *maxamd, int32_t *mintau, float *ivrc, int32_t *obound, int32_t *voibuf, int32_t *af, struct lpc10_encoder_state *st);
 

@@ -11,7 +11,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int dcbias_(int32_t *len, float *speech, float *sigout);
 

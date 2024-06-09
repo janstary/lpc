@@ -1,4 +1,4 @@
-#include "f2c.h"
+#include "lpc.h"
 
 extern int onset_(float *pebuf, int32_t *osbuf, int32_t *osptr, int32_t *oslen, int32_t *sbufl, int32_t *sbufh, int32_t *lframe, struct lpc10_encoder_state *st);
 

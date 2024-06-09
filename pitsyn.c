@@ -21,7 +21,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int pitsyn_(int32_t *order, int32_t *voice, int32_t *pitch, float *rms, float *rc, int32_t *lframe, int32_t *ivuv, int32_t *ipiti, float *rmsi, float *rci, int32_t *nout, float *ratio, struct lpc10_decoder_state *st);
 

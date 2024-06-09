@@ -17,7 +17,7 @@
 
 #include <stdlib.h>
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int lpcini_(void);
 

@@ -19,7 +19,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int deemp_(float *x, int32_t *n, struct lpc10_decoder_state *st);
 

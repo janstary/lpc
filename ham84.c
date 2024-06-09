@@ -11,7 +11,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int ham84_(int32_t *input, int32_t *output, int32_t *errcnt);
 

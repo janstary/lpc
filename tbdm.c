@@ -11,7 +11,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int tbdm_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, float *amdf, int32_t *minptr, int32_t *maxptr, int32_t *mintau);
 

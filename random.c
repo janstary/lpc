@@ -19,7 +19,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int32_t random_(struct lpc10_decoder_state *st);
 

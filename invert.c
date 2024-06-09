@@ -1,4 +1,4 @@
-#include "f2c.h"
+#include "lpc.h"
 
 extern int invert_(int32_t *order, float *phi, float *psi, float *rc);
 

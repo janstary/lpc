@@ -19,7 +19,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 int bsynz_(float *coef, int32_t *ip, int32_t *iv, float *sout, float *rms, float *ratio, float *g2pass, struct lpc10_decoder_state *st);
 

@@ -19,7 +19,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int prepro_(float *speech, int32_t *length,
 		   struct lpc10_encoder_state *st);

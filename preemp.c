@@ -11,7 +11,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int preemp_(float *inbuf, float *pebuf, int32_t *nsamp, float *coef, float *z__);
 

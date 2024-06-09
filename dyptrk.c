@@ -19,7 +19,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int dyptrk_(float *amdf, int32_t *ltau, int32_t *minptr, int32_t *voice, int32_t *pitch, int32_t *midx, struct lpc10_encoder_state *st);
 

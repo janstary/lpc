@@ -1,4 +1,4 @@
-#include "f2c.h"
+#include "lpc.h"
 
 extern int vparms_(int32_t *vwin, float *inbuf, float *lpbuf, int32_t *buflim, int32_t *half, float *dither, int32_t *mintau, int32_t *zc, int32_t *lbe, int32_t *fbe, float *qs, float *rc1, float *ar_b__, float *ar_f__);
 

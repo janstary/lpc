@@ -11,7 +11,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int mload_(int32_t *order, int32_t *awins, int32_t *awinf, float *speech, float *phi, float *psi);
 

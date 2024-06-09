@@ -19,7 +19,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int synths_(int32_t *voice, int32_t *pitch, float *rms, float *rc, float *speech, int32_t *k, struct lpc10_decoder_state *st);
 

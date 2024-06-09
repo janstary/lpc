@@ -16,7 +16,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 int chanwr_(int32_t *order, int32_t *ipitv, int32_t *irms, int32_t *irc, int32_t *ibits, struct lpc10_encoder_state *st);
 int chanrd_(int32_t *order, int32_t *ipitv, int32_t *irms, int32_t *irc, int32_t *ibits);

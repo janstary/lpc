@@ -1,5 +1,5 @@
 #include <math.h>
-#include "f2c.h"
+#include "lpc.h"
 
 int32_t pow_ii(int32_t *ap, int32_t *bp);
 

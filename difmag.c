@@ -1,4 +1,4 @@
-#include "f2c.h"
+#include "lpc.h"
 
 extern int difmag_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, int32_t *maxlag, float *amdf, int32_t *minptr, int32_t *maxptr);
 

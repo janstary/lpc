@@ -13,7 +13,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 extern int irc2pc_(float *rc, float *pc, int32_t *order, float *gprime, float *g2pass);
 

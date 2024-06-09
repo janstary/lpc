@@ -3,7 +3,7 @@
 	-lf2c -lm   (in that order)
 */
 
-#include "f2c.h"
+#include "lpc.h"
 
 int analys_(float *speech, int32_t *voice, int32_t *pitch, float *rms, float *rc, struct lpc10_encoder_state *st);
 
