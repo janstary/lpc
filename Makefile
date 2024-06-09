@@ -2,13 +2,11 @@ PREFIX	= /usr/local
 LIBDIR	= $(PREFIX)/lib/
 MANDIR	= $(PREFIX)/man/
 INCDIR	= $(PREFIX)/include/
+CFLAGS	= -Wall -pedantic -fPIC
 
-#LIB	= liblpc.so
-LIB	= liblpc.dylib
+LIB	= liblpc.so
 INC	= lpc.h
 MAN	= lpc.3
-
-CFLAGS	= -Wall -pedantic
 
 OBJS	= \
 	analys.o	\
