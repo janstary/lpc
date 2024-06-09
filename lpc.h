@@ -1,9 +1,6 @@
 #include <stdint.h>
 #include <limits.h>
 
-#ifndef __LPC10_H__
-#define __LPC10_H__
-
 #define TRUE	1
 #define FALSE	0
 
@@ -188,5 +185,3 @@ int lpc10_encode (float *speech, int32_t *bits, struct lpc10_encoder_state *st);
 struct lpc10_decoder_state * create_lpc10_decoder_state (void);
 void init_lpc10_decoder_state (struct lpc10_decoder_state *st);
 int lpc10_decode (int32_t *bits, float *speech, struct lpc10_decoder_state *st);
-
-#endif /* __LPC10_H__ */

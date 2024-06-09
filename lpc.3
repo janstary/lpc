@@ -3,7 +3,7 @@
 .Os
 .Sh NAME
 .Nm lpc
-.Nd linear prediction codec
+.Nd linear predictive coding
 .Sh SYNOPSIS
 .In lpc.h
 .Pp
@@ -22,7 +22,48 @@
 .Sh DESCRIPTION
 The
 .Nm
-library implements the linear prediction codec.
+library implements linear predictive coding and decoding.
+.Pp
+The
+.Fn create_lpc10_encoder_state
+function returns a pointer to an initialized
+.Ft lpc10_encoder_state
+structure used during encoding.
+.Pp
+The
+.Fn lpc10_encode
+function reads indices 0 through (LPC10_SAMPLES_PER_FRAME-1) of the
+.Va speech
+array writes indices 0 through (LPC10_BITS_IN_COMPRESSED_FRAME-1) of the
+.Va bits
+array, while both reading and writing the
+.Ft lpc10_encoder_state
+structure contents, i.e. altering the encoder state.
+.Pp
+The
+.Ft lpc10_encoder_state
+structure should not be initialized for every frame of encoded speech.
+It is done automatically once by
+.Fn create_lpc10_encoder_state
+at the beginning.
+The
+.Fn init_lpc10_encoder_state
+function reinitializes the
+.Fn lpc10_encoder_state
+structure.
+This might be useful if you are finished processing one sound sample,
+and want to reuse the same
+.Ft lpc10_encoder_state
+structure to process another sound sample.
+.Pp
+The calling sequence for the decoder is similar.
+The only significant difference is that the
+.Va bits
+array is read (indices 0 through (LPC10_BITS_IN_COMPRESSED_FRAME-1)),
+and the
+.Va speech
+array
+is written (indices 0 through (LPC10_SAMPLES_PER_FRAME-1)).
 .Sh AUTHORS
 .An Andy Fingerhut Aq Mt andy.fingerhut@gmail.com
 .Sh CAVEATS
