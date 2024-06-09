@@ -1,5 +1,8 @@
 #include "f2c.h"
-#include "middle.h"
+
+#define middle(x,y,z) ((x) < (y))			\
+	? ((y) < (z) ? (y) : ((x) < (z) ? (z) : (x)))	\
+	: ((x) < (z) ? (x) : ((y) < (z) ? (z) : (y)))
 
 extern int decode_(int32_t *ipitv, int32_t *irms, int32_t *irc, int32_t *voice, int32_t *pitch, float *rms, float *rc, struct lpc10_decoder_state *st);
 
