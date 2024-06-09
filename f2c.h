@@ -3,13 +3,6 @@
 
 #include "lpc10.h"
 
-/*typedef short int shortint;*/
-/* The following types are not used in the translated C code for the
- * LPC-10 coder, but they might be needed by the definitions down
- * below, so they don't cause compilation errors.  */
-typedef struct { float r, i; } complex;
-typedef struct { double r, i; } doublecomplex;
-
 #define TRUE_ (1)
 #define FALSE_ (0)
 
@@ -107,16 +100,6 @@ typedef struct
 } inlist;
 
 #define VOID void
-
-union Multitype {       /* for multiple entry points */
-        char g;
-        int16_t h;
-        int32_t i;
-        float r;
-        double d;
-        complex c;
-        doublecomplex z;
-        };
 
 typedef union Multitype Multitype;
 
