@@ -1,4 +1,3 @@
-#include <math.h>
 #include "f2c.h"
 
 extern int onset_(float *pebuf, int32_t *osbuf, int32_t *osptr, int32_t *oslen, int32_t *sbufl, int32_t *sbufh, int32_t *lframe, struct lpc10_encoder_state *st);
@@ -190,7 +189,7 @@ static float c_b2 = 1.f;
 	r__1 = pebuf[i__ - 1];
 	*d__ = (r__1 * r__1 + (*d__) * 63.f) / 64.f;
 	if ((*d__) != 0.f) {
-	    if (fabs(*n) > (*d__)) {
+	    if (abs(*n) > (*d__)) {
 		*fpc = r_sign(&c_b2, n);
 	    } else {
 		*fpc = (*n) / (*d__);
@@ -222,7 +221,7 @@ of */
 	l2buf[*l2ptr1 - 1] = *fpc;
 	*l2ptr1 = *l2ptr1 % 16 + 1;
 	*l2ptr2 = *l2ptr2 % 16 + 1;
-	if ((r__1 = *l2sum1 - l2sum2, fabs(r__1)) > 1.7f) {
+	if ((r__1 = *l2sum1 - l2sum2, abs(r__1)) > 1.7f) {
 	    if (! (*hyst)) {
 /*   Ignore if buffer full */
 		if (*osptr <= *oslen) {

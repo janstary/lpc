@@ -1,4 +1,3 @@
-#include <math.h>
 #include "f2c.h"
 
 extern int invert_(int32_t *order, float *phi, float *psi, float *rc);
@@ -94,7 +93,7 @@ extern int invert_(int32_t *order, float *phi, float *psi, float *rc);
 	    }
 	}
 /*  Compute intermediate results, which are similar to RC's */
-	if ((r__1 = v[j + j * 10 - 11], fabs(r__1)) < 1e-10f) {
+	if ((r__1 = v[j + j * 10 - 11], abs(r__1)) < 1e-10f) {
 	    goto L100;
 	}
 	rc[j] = psi[j];

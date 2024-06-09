@@ -6,12 +6,8 @@
 #define TRUE_ (1)
 #define FALSE_ (0)
 
-#ifndef min
+#define abs(x) ((x) >= 0 ? (x) : -(x))
 #define min(a,b) ((a) <= (b) ? (a) : (b))
-#endif
-
-#ifndef max
 #define max(a,b) ((a) >= (b) ? (a) : (b))
-#endif
 
 #endif

@@ -1,29 +1,4 @@
-/*
-
-$Log: f2clib.c,v $
-Revision 1.2  2007/04/18 13:59:59  rrt
-Remove $Log tokens and associated log messages (in many files, several
-copies of every log message were being written) and lots of warnings.
-
-Revision 1.1  2007/04/16 21:57:06  rrt
-LPC-10 support, documentation still to come; I wanted to land the code
-before 14.0.0 went into test, and I'll be busy tomorrow.
-
-Not highly tested either, but it's just a format, doesn't interfere
-with anything else, and I'll get on that case before we go stable.
-
- * Revision 1.1  1996/08/19  22:32:10  jaf
- * Initial revision
- *
-
-*/
-
-/*
- * f2clib.c
- *
- * SCCS ID:  @(#)f2clib.c 1.2 96/05/19
- */
-
+#include <math.h>
 #include "f2c.h"
 
 int32_t pow_ii(int32_t *ap, int32_t *bp);
@@ -66,11 +41,6 @@ x = (*a >= 0 ? *a : - *a);
 return( *b >= 0 ? x : -x);
 }
 
-
-int32_t i_nint(float *x);
-
-#undef abs
-#include "math.h"
 int32_t i_nint(float *x)
 {
 return( (*x)>=0 ?

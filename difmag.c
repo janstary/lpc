@@ -1,4 +1,3 @@
-#include <math.h>
 #include "f2c.h"
 
 extern int difmag_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, int32_t *maxlag, float *amdf, int32_t *minptr, int32_t *maxptr);
@@ -79,7 +78,7 @@ extern int difmag_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, i
 	sum = 0.f;
 	i__2 = n2;
 	for (j = n1; j <= i__2; j += 4) {
-	    sum += (r__1 = speech[j] - speech[j + tau[i__]], fabs(r__1));
+	    sum += (r__1 = speech[j] - speech[j + tau[i__]], abs(r__1));
 	}
 	amdf[i__] = sum;
 	if (amdf[i__] < amdf[*minptr]) {
