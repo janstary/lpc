@@ -1,14 +1,5 @@
 #include "lpc.h"
 
-/* Common Block Declarations */
-
-extern struct {
-    int32_t order, lframe;
-    int32_t corrp;
-} contrl_;
-
-#define contrl_1 contrl_
-
 /* Table of constant values */
 
 static int32_t c__10 = 10;

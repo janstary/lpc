@@ -1,15 +1,6 @@
 #include <math.h>
 #include "lpc.h"
 
-/* Common Block Declarations */
-
-extern struct {
-    int32_t order, lframe;
-    int32_t corrp;
-} contrl_;
-
-#define contrl_1 contrl_
-
 /* Heavily commented the local variables that are saved from one */
 /* invocation to the next, and how the local variable FIRST is used to */
 /* avoid the need to assign most of them initial values with DATA */

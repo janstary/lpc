@@ -1,14 +1,5 @@
 #include "lpc.h"
 
-/* Common Block Declarations */
-
-extern struct {
-    int32_t order, lframe;
-    int32_t corrp;
-} contrl_;
-
-#define contrl_1 contrl_
-
 /* Revision 1.2  1996/03/13  16:32:17  jaf */
 /* Comments added explaining which of the local variables of this */
 /* subroutine need to be saved from one invocation to the next, and which */
