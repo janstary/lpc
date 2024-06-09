@@ -1,54 +1,8 @@
 #include "lpc.h"
 
-extern int onset_(float *pebuf, int32_t *osbuf, int32_t *osptr, int32_t *oslen, int32_t *sbufl, int32_t *sbufh, int32_t *lframe, struct lpc10_encoder_state *st);
-
 /* Table of constant values */
 
 static float c_b2 = 1.f;
-
-/* ****************************************************************** */
-
-/* 	ONSET Version 49 */
-
-/* Revision 1.2  1996/08/20  20:37:55  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:31:18  jaf
- * Initial revision
- * */
-/* Revision 1.5  1996/03/15  16:41:01  jaf */
-/* Just rearranged INITONSET assignment orders to be consistent with */
-/* order of DATA statements in ONSET. */
-
-/* Revision 1.4  1996/03/15  15:48:27  jaf */
-/* Changed some comments, and only reordered the DATA statements (their */
-/* meaning wasn't changed). */
-
-/* Revision 1.3  1996/03/14  23:53:06  jaf */
-/* Added an entry INITONSET that reinitializes the local state variables */
-/* of subroutine ONSET. */
-
-/* Rearranged quite a few comments, adding more explaining which */
-/* arguments were inputs, and how the modified ones can be changed. */
-
-/* Revision 1.2  1996/03/12  23:53:00  jaf */
-/* Lots of comments added about the local state of this subroutine that */
-/* must be saved from one invocation to the next. */
-
-/* One constant 180 replaced with LFRAME, which should be "more general", */
-/* even though it would probably require many more changes than this to */
-/* get this coder to work for other frame sizes. */
-
-/* Revision 1.1  1996/02/07 14:48:09  jaf */
-/* Initial revision */
-
-
-/* ****************************************************************** */
 
 /* 	Floating point version */
 

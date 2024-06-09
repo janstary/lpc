@@ -1,27 +1,4 @@
-/*
-
- * Revision 1.2  1996/08/20  20:42:59  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_decoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_decoder_state().
- *
- * Revision 1.1  1996/08/19  22:30:33  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int synths_(int32_t *voice, int32_t *pitch, float *rms, float *rc, float *speech, int32_t *k, struct lpc10_decoder_state *st);
 
 /* Common Block Declarations */
 
@@ -35,55 +12,6 @@ extern struct {
 /* Table of constant values */
 
 static float c_b2 = .7f;
-
-/* ***************************************************************** */
-
-/* 	SYNTHS Version 54 */
-
-/*
- * Revision 1.2  1996/08/20  20:42:59  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_decoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_decoder_state().
- *
- * Revision 1.1  1996/08/19  22:30:33  jaf
- * Initial revision
- * */
-/* Revision 1.5  1996/03/26  19:31:58  jaf */
-/* Commented out trace statements. */
-
-/* Revision 1.4  1996/03/25  19:41:01  jaf */
-/* Changed so that MAXFRM samples are always returned in the output array */
-/* SPEECH. */
-
-/* This required delaying the returned samples by MAXFRM sample times, */
-/* and remembering any "left over" samples returned by PITSYN from one */
-/* call of SYNTHS to the next. */
-
-/* Changed size of SPEECH from 2*MAXFRM to MAXFRM.  Removed local */
-/* variable SOUT.  Added local state variables BUF and BUFLEN. */
-
-/* Revision 1.3  1996/03/25  19:20:10  jaf */
-/* Added comments about the range of possible return values for argument */
-/* K, and increased the size of the arrays filled in by PITSYN from 11 to */
-/* 16, as has been already done inside of PITSYN. */
-
-/* Revision 1.2  1996/03/22  00:18:18  jaf */
-/* Added comments explaining meanings of input and output parameters, and */
-/* indicating which array indices can be read or written. */
-
-/* Added entry INITSYNTHS, which does nothing except call the */
-/* corresponding initialization entries for subroutines PITSYN, BSYNZ, */
-/* and DEEMP. */
-
-/* Revision 1.1  1996/02/07 14:49:44  jaf */
-/* Initial revision */
-
-
-/* ***************************************************************** */
 
 /* The note below is from the distributed version of the LPC10 coder. */
 /* The version of the code below has been modified so that SYNTHS always */

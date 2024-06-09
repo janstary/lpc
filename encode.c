@@ -1,19 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:32:21  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int encode_(int32_t *voice, int32_t *pitch, float *rms, float *rc, int32_t *ipitch, int32_t *irms, int32_t *irc);
 
 /* Common Block Declarations */
 
@@ -27,37 +12,6 @@ extern struct {
 /* Table of constant values */
 
 static int32_t c__2 = 2;
-
-/* ***************************************************************** */
-
-/* 	ENCODE Version 54 */
-
-/*
- * Revision 1.1  1996/08/19  22:32:21  jaf
- * Initial revision
- * */
-/* Revision 1.5  1996/03/26  19:35:50  jaf */
-/* Commented out trace statements. */
-
-/* Revision 1.4  1996/03/21  00:26:29  jaf */
-/* Added the comment that this subroutine has no local state. */
-
-/* In the last check-in, I forgot to mention that I had added comments */
-/* explaining which indices of array arguments are read or written. */
-
-/* Revision 1.3  1996/03/21  00:22:39  jaf */
-/* Added comments explaining that all local arrays are effectively */
-/* constants. */
-
-/* Revision 1.2  1996/03/13  18:48:33  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:45:29  jaf */
-/* Initial revision */
-
-
-/* ***************************************************************** */
 
 /*  Quantize LPC parameters for transmission */
 

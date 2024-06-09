@@ -1,29 +1,5 @@
 #include "lpc.h"
 
-extern int difmag_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, int32_t *maxlag, float *amdf, int32_t *minptr, int32_t *maxptr);
-
-/* ********************************************************************** */
-
-/* 	DIFMAG Version 49 */
-
-/*
- * Revision 1.1  1996/08/19  22:32:31  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/15  23:09:39  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/13  14:41:31  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:45:04  jaf */
-/* Initial revision */
-
-
-/* ********************************************************************* */
-
 /*  Compute Average Magnitude Difference Function */
 
 /* Inputs: */

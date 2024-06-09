@@ -1,27 +1,4 @@
-/*
-
- * Revision 1.2  1996/08/20  20:25:29  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:32:26  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int dyptrk_(float *amdf, int32_t *ltau, int32_t *minptr, int32_t *voice, int32_t *pitch, int32_t *midx, struct lpc10_encoder_state *st);
 
 /* Common Block Declarations */
 
@@ -32,38 +9,6 @@ extern struct {
 
 #define contrl_1 contrl_
 
-/* ********************************************************************* */
-
-/* 	DYPTRK Version 52 */
-
-/*
- * Revision 1.2  1996/08/20  20:25:29  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:32:26  jaf
- * Initial revision
- * */
-/* Revision 1.5  1996/03/26  19:35:35  jaf */
-/* Commented out trace statements. */
-
-/* Revision 1.4  1996/03/19  18:03:22  jaf */
-/* Replaced the initialization "DATA P/60*DEPTH*0/" with "DATA P/120*0/", */
-/* because apparently Fortran (or at least f2c) can't handle expressions */
-/* like that. */
-
-/* Revision 1.3  1996/03/19  17:38:32  jaf */
-/* Added comments about the local variables that should be saved from one */
-/* invocation to the next.  None of them were given initial values in the */
-/* original code, but from my testing, it appears that initializing them */
-/* all to 0 works. */
-
-/* Added entry INITDYPTRK to reinitialize these local variables. */
-
 /* Revision 1.2  1996/03/13  16:32:17  jaf */
 /* Comments added explaining which of the local variables of this */
 /* subroutine need to be saved from one invocation to the next, and which */
@@ -72,12 +17,6 @@ extern struct {
 /* WARNING!  Some of them that should are never given initial values in */
 /* this code.  Hopefully, Fortran 77 defines initial values for them, but */
 /* even so, giving them explicit initial values is preferable. */
-
-/* Revision 1.1  1996/02/07 14:45:14  jaf */
-/* Initial revision */
-
-
-/* ********************************************************************* */
 
 /*   Dynamic Pitch Tracker */
 

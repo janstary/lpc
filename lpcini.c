@@ -1,25 +1,5 @@
-/*
-
- * Revision 1.2  1996/08/20  20:35:41  jaf
- * Added functions for allocating and initializing lpc10_encoder_state
- * and lpc10_decoder_state structures.
- *
- * Revision 1.1  1996/08/19  22:31:40  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-        -lf2c -lm   (in that order)
-*/
-
 #include <stdlib.h>
-
 #include "lpc.h"
-
-extern int lpcini_(void);
 
 /* Common Block Declarations */
 
@@ -29,20 +9,6 @@ struct {
 } contrl_;
 
 #define contrl_1 contrl_
-
-/* ***************************************************************** */
-
-/*
- * Revision 1.2  1996/08/20  20:35:41  jaf
- * Added functions for allocating and initializing lpc10_encoder_state
- * and lpc10_decoder_state structures.
- *
- * Revision 1.1  1996/08/19  22:31:40  jaf
- * Initial revision
- * */
-/* Revision 1.1  1996/03/28  00:04:05  jaf */
-/* Initial revision */
-
 
 /* ***************************************************************** */
 

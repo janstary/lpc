@@ -1,35 +1,4 @@
-/*
-
- * Revision 1.2  1996/08/20  20:28:05  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:32:04  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int hp100_(float *speech, int32_t *start, int32_t *end,
-		  struct lpc10_encoder_state *st);
-extern int inithp100_(void);
-
-/* ********************************************************************* */
-
-/*      HP100 Version 55 */
-
-/* ********************************************************************* */
 
 /*    100 Hz High Pass Filter */
 

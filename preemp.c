@@ -1,40 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:30:58  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int preemp_(float *inbuf, float *pebuf, int32_t *nsamp, float *coef, float *z__);
-
-/* ******************************************************************* */
-
-/* 	PREEMP Version 55 */
-
-/*
- * Revision 1.1  1996/08/19  22:30:58  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/14  23:16:29  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/11  23:23:34  jaf */
-/* Added a bunch of comments to an otherwise simple subroutine. */
-
-/* Revision 1.1  1996/02/07 14:48:48  jaf */
-/* Initial revision */
-
-
-/* ******************************************************************* */
 
 /*   Preemphasize speech with a single-zero filter. */
 /*  (When coef = .9375, preemphasis is as in LPC43.) */

@@ -1,41 +1,5 @@
 #include <math.h>
-
-/*
-
- * Revision 1.1  1996/08/19  22:32:17  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int energy_(int32_t *len, float *speech, float *rms);
-
-/* ********************************************************************* */
-
-/* 	ENERGY Version 50 */
-
-/*
- * Revision 1.1  1996/08/19  22:32:17  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/18  21:17:41  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/13  16:46:02  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:45:40  jaf */
-/* Initial revision */
-
 
 /* ********************************************************************* */
 

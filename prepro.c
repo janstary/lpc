@@ -1,61 +1,8 @@
-/*
-
- * Revision 1.2  1996/08/20  20:40:51  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:30:54  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int prepro_(float *speech, int32_t *length,
-		   struct lpc10_encoder_state *st);
 
 /* Table of constant values */
 
 static int32_t c__1 = 1;
-
-/* ********************************************************************* */
-
-/* 	PREPRO Version 48 */
-
-/*
- * Revision 1.2  1996/08/20  20:40:51  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:30:54  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/14  23:22:56  jaf */
-/* Added comments about when INITPREPRO should be used. */
-
-/* Revision 1.2  1996/03/14  23:09:27  jaf */
-/* Added an entry named INITPREPRO that initializes the local state of */
-/* this subroutine, and those it calls (if any). */
-
-/* Revision 1.1  1996/02/07  14:48:54  jaf */
-/* Initial revision */
-
-
-/* ********************************************************************* */
 
 /*    Pre-process input speech: */
 

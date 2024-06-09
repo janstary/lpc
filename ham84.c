@@ -1,38 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:32:07  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int ham84_(int32_t *input, int32_t *output, int32_t *errcnt);
-
-/* ***************************************************************** */
-
-/* 	HAM84 Version 45G */
-
-/*
- * Revision 1.1  1996/08/19  22:32:07  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/21  15:26:00  jaf */
-/* Put comment header in standard form. */
-
-/* Revision 1.2  1996/03/13  22:00:13  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:47:04  jaf */
-/* Initial revision */
-
 
 /* ***************************************************************** */
 

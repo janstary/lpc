@@ -1,45 +1,8 @@
 #include "lpc.h"
 
-extern int vparms_(int32_t *vwin, float *inbuf, float *lpbuf, int32_t *buflim, int32_t *half, float *dither, int32_t *mintau, int32_t *zc, int32_t *lbe, int32_t *fbe, float *qs, float *rc1, float *ar_b__, float *ar_f__);
-
 /* Table of constant values */
 
 static float c_b2 = 1.f;
-
-/* ********************************************************************* */
-
-/* 	VPARMS Version 50 */
-
-/*
- * Revision 1.1  1996/08/19  22:30:04  jaf
- * Initial revision
- * */
-/* Revision 1.6  1996/03/29  18:01:16  jaf */
-/* Added some more comments about the range of INBUF and LPBUF that can */
-/* be read.  Note that it is possible for index VWIN(2)+1 to be read from */
-/* INBUF, which might be outside of its defined range, although that will */
-/* require more careful checking. */
-
-/* Revision 1.5  1996/03/19  00:02:02  jaf */
-/* I just noticed that the argument DITHER is modified inside of this */
-/* subroutine.  Comments were added explaining the possible final values. */
-
-/* Revision 1.4  1996/03/18  22:22:59  jaf */
-/* Finishing the job I said I did with the last check-in comments. */
-
-/* Revision 1.3  1996/03/18  22:22:17  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/13  15:02:58  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:50:42  jaf */
-/* Initial revision */
-
-
-/* ********************************************************************* */
 
 /*  Calculate voicing parameters: */
 

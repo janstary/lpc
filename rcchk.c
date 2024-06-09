@@ -1,30 +1,5 @@
 #include "lpc.h"
 
-extern int rcchk_(int32_t *order, float *rc1f, float *rc2f);
-
-/* ********************************************************************* */
-
-/* 	RCCHK Version 45G */
-
-/*
- * Revision 1.1  1996/08/19  22:30:41  jaf
- * Initial revision
- * */
-/* Revision 1.4  1996/03/27  18:13:47  jaf */
-/* Commented out a call to subroutine ERROR. */
-
-/* Revision 1.3  1996/03/18  15:48:53  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/13  16:55:22  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:49:08  jaf */
-/* Initial revision */
-
-
 /* ********************************************************************* */
 
 /*  Check RC's, repeat previous frame's RC's if unstable */

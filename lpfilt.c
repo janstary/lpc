@@ -1,38 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:31:35  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int lpfilt_(float *inbuf, float *lpbuf, int32_t *len, int32_t *nsamp);
-
-/* *********************************************************************** */
-
-/* 	LPFILT Version 55 */
-
-/*
- * Revision 1.1  1996/08/19  22:31:35  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/15  16:53:49  jaf */
-/* Just put comment header in standard form. */
-
-/* Revision 1.2  1996/03/12  23:58:06  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:47:44  jaf */
-/* Initial revision */
-
 
 /* *********************************************************************** */
 

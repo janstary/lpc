@@ -1,30 +1,5 @@
 #include "lpc.h"
 
-extern int invert_(int32_t *order, float *phi, float *psi, float *rc);
-
-/* **************************************************************** */
-
-/* 	INVERT Version 45G */
-
-/*
- * Revision 1.1  1996/08/19  22:32:00  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/18  20:52:47  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/13  16:51:32  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Eliminated a comment from the original, describing a local array X */
-/* that appeared nowhere in the code. */
-
-/* Revision 1.1  1996/02/07 14:47:20  jaf */
-/* Initial revision */
-
-
 /* **************************************************************** */
 
 /*  Invert a covariance matrix using Choleski decomposition method. */

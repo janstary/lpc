@@ -1,29 +1,5 @@
 #include <math.h>
-
-/*
-
- * Revision 1.2  1996/08/20  20:45:00  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:30:14  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int voicin_(int32_t *vwin, float *inbuf, float *lpbuf, int32_t *buflim, int32_t *half, float *minamd, float *maxamd, int32_t *mintau, float *ivrc, int32_t *obound, int32_t *voibuf, int32_t *af, struct lpc10_encoder_state *st);
 
 /* Common Block Declarations */
 
@@ -34,58 +10,6 @@ extern struct {
 
 #define contrl_1 contrl_
 
-/****************************************************************************/
-
-/* 	VOICIN Version 52 */
-
-/*
- * Revision 1.2  1996/08/20  20:45:00  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:30:14  jaf
- * Initial revision
- * */
-/* Revision 1.10  1996/03/29  17:59:14  jaf */
-/* Avoided using VALUE(9), although it shouldn't affect the function of */
-/* the code at all, because it was always multiplied by VDC(9,SNRL), */
-/* which is 0 for all values of SNRL.  Still, if VALUE(9) had an initial */
-/* value of IEEE NaN, it might cause trouble (I don't know how IEEE */
-/* defines Nan * 0.  It should either be NaN or 0.) */
-
-/* Revision 1.9  1996/03/29  17:54:46  jaf */
-/* Added a few comments about the accesses made to argument array VOIBUF */
-/* and the local saved array VOICE. */
-
-/* Revision 1.8  1996/03/27  18:19:54  jaf */
-/* Added an assignment to VSTATE that does not affect the function of the */
-/* program at all.  The only reason I put it in was so that the tracing */
-/* statements at the end, when enabled, will print a consistent value for */
-/* VSTATE when HALF .EQ. 1, rather than a garbage value that could change */
-/* from one call to the next. */
-
-/* Revision 1.7  1996/03/26  20:00:06  jaf */
-/* Removed the inclusion of the file "vcomm.fh", and put its contents */
-/* into this file.  It was included nowhere else but here. */
-
-/* Revision 1.6  1996/03/26  19:38:09  jaf */
-/* Commented out trace statements. */
-
-/* Revision 1.5  1996/03/19  20:43:45  jaf */
-/* Added comments about which indices of OBOUND and VOIBUF can be */
-/* accessed, and whether they are read or written.  VOIBUF is fairly */
-/* messy. */
-
-/* Revision 1.4  1996/03/19  15:00:58  jaf */
-/* Moved the DATA statements for the *VDC* variables later, as it is */
-/* apparently illegal to have DATA statements before local variable */
-/* declarations. */
-
-/* Revision 1.3  1996/03/19  00:10:49  jaf */
 /* Heavily commented the local variables that are saved from one */
 /* invocation to the next, and how the local variable FIRST is used to */
 /* avoid the need to assign most of them initial values with DATA */
@@ -109,10 +33,6 @@ extern struct {
 
 /* WARNING!  VALUE(9) is used, but never assigned a value.  It should */
 /* probably be eliminated from the code. */
-
-/* Revision 1.1  1996/02/07 14:50:28  jaf */
-/* Initial revision */
-
 
 /****************************************************************************/
 

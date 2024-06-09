@@ -1,31 +1,4 @@
-/*
-
- * Revision 1.2  1996/08/20  20:30:11  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Changed name of function from lpcenc_ to lpc10_encode, simply to make
- * all lpc10 functions have more consistent naming with each other.
- *
- * Revision 1.1  1996/08/19  22:31:48  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int lpcdec_(int32_t *bits, float *speech);
-extern int initlpcdec_(void);
 
 /* Common Block Declarations */
 
@@ -39,29 +12,6 @@ extern struct {
 /* Table of constant values */
 
 static int32_t c__10 = 10;
-
-/* ***************************************************************** */
-
-/*
- * Revision 1.2  1996/08/20  20:30:11  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Changed name of function from lpcenc_ to lpc10_encode, simply to make
- * all lpc10 functions have more consistent naming with each other.
- *
- * Revision 1.1  1996/08/19  22:31:48  jaf
- * Initial revision
- * */
-/* Revision 1.1  1996/03/28  00:03:00  jaf */
-/* Initial revision */
-
-
-/* ***************************************************************** */
 
 /* Decode 54 bits to one frame of 180 speech samples. */
 

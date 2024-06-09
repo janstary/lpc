@@ -1,41 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:31:53  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int ivfilt_(float *lpbuf, float *ivbuf, int32_t *len, int32_t *nsamp, float *ivrc);
-
-/* ********************************************************************* */
-
-/* 	IVFILT Version 48 */
-
-/*
- * Revision 1.1  1996/08/19  22:31:53  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/15  21:36:29  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/13  00:01:00  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:47:34  jaf */
-/* Initial revision */
-
-
-/* ********************************************************************* */
 
 /*   2nd order inverse filter, speech is decimated 4:1 */
 

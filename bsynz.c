@@ -1,27 +1,5 @@
 #include <math.h>
-
-/*
- * Revision 1.2  1996/08/20  20:18:55  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_decoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_decoder_state().
- *
- * Revision 1.1  1996/08/19  22:32:58  jaf
- * Initial revision
- *
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-int bsynz_(float *coef, int32_t *ip, int32_t *iv, float *sout, float *rms, float *ratio, float *g2pass, struct lpc10_decoder_state *st);
 
 /* Common Block Declarations */
 

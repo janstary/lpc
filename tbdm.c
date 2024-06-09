@@ -1,41 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:30:26  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
 #include "lpc.h"
-
-extern int tbdm_(float *speech, int32_t *lpita, int32_t *tau, int32_t *ltau, float *amdf, int32_t *minptr, int32_t *maxptr, int32_t *mintau);
-
-/* ********************************************************************** */
-
-/* 	TBDM Version 49 */
-
-/*
- * Revision 1.1  1996/08/19  22:30:26  jaf
- * Initial revision
- * */
-/* Revision 1.3  1996/03/18  22:14:00  jaf */
-/* Just added a few comments about which array indices of the arguments */
-/* are used, and mentioning that this subroutine has no local state. */
-
-/* Revision 1.2  1996/03/13  14:48:37  jaf */
-/* Comments added explaining that none of the local variables of this */
-/* subroutine need to be saved from one invocation to the next. */
-
-/* Revision 1.1  1996/02/07 14:49:54  jaf */
-/* Initial revision */
-
-
-/* ********************************************************************* */
 
 /*TURBO DIFMAG: Compute High Resolution Average Magnitude Difference Function
 */
