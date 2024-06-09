@@ -1,16 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:30:04  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
+#include <math.h>
 #include "f2c.h"
 
 extern int vparms_(int32_t *vwin, float *inbuf, float *lpbuf, int32_t *buflim, int32_t *half, float *dither, int32_t *mintau, int32_t *zc, int32_t *lbe, int32_t *fbe, float *qs, float *rc1, float *ar_b__, float *ar_f__);
@@ -170,9 +158,9 @@ static float c_b2 = 1.f;
     oldsgn = r_sign(&c_b2, &r__1);
     i__1 = stop;
     for (i__ = start; i__ <= i__1; ++i__) {
-	lp_rms__ += (r__1 = lpbuf[i__], abs(r__1));
-	ap_rms__ += (r__1 = inbuf[i__], abs(r__1));
-	e_pre__ += (r__1 = inbuf[i__] - inbuf[i__ - 1], abs(r__1));
+	lp_rms__ += (r__1 = lpbuf[i__], fabs(r__1));
+	ap_rms__ += (r__1 = inbuf[i__], fabs(r__1));
+	e_pre__ += (r__1 = inbuf[i__] - inbuf[i__ - 1], fabs(r__1));
 /* Computing 2nd power */
 	r__1 = inbuf[i__];
 	e0ap += r__1 * r__1;

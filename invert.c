@@ -1,16 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:32:00  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
+#include <math.h>
 #include "f2c.h"
 
 extern int invert_(int32_t *order, float *phi, float *psi, float *rc);
@@ -106,7 +94,7 @@ extern int invert_(int32_t *order, float *phi, float *psi, float *rc);
 	    }
 	}
 /*  Compute intermediate results, which are similar to RC's */
-	if ((r__1 = v[j + j * 10 - 11], abs(r__1)) < 1e-10f) {
+	if ((r__1 = v[j + j * 10 - 11], fabs(r__1)) < 1e-10f) {
 	    goto L100;
 	}
 	rc[j] = psi[j];

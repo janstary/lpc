@@ -1,3 +1,4 @@
+#include <math.h>
 #include "f2c.h"
 #include "middle.h"
 

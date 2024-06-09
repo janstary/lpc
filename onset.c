@@ -1,24 +1,4 @@
-/*
-
- * Revision 1.2  1996/08/20  20:37:55  jaf
- * Removed all static local variables that were SAVE'd in the Fortran
- * code, and put them in struct lpc10_encoder_state that is passed as an
- * argument.
- *
- * Removed init function, since all initialization is now done in
- * init_lpc10_encoder_state().
- *
- * Revision 1.1  1996/08/19  22:31:18  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
+#include <math.h>
 #include "f2c.h"
 
 extern int onset_(float *pebuf, int32_t *osbuf, int32_t *osptr, int32_t *oslen, int32_t *sbufl, int32_t *sbufh, int32_t *lframe, struct lpc10_encoder_state *st);
@@ -210,7 +190,7 @@ static float c_b2 = 1.f;
 	r__1 = pebuf[i__ - 1];
 	*d__ = (r__1 * r__1 + (*d__) * 63.f) / 64.f;
 	if ((*d__) != 0.f) {
-	    if (abs(*n) > (*d__)) {
+	    if (fabs(*n) > (*d__)) {
 		*fpc = r_sign(&c_b2, n);
 	    } else {
 		*fpc = (*n) / (*d__);
@@ -242,7 +222,7 @@ of */
 	l2buf[*l2ptr1 - 1] = *fpc;
 	*l2ptr1 = *l2ptr1 % 16 + 1;
 	*l2ptr2 = *l2ptr2 % 16 + 1;
-	if ((r__1 = *l2sum1 - l2sum2, abs(r__1)) > 1.7f) {
+	if ((r__1 = *l2sum1 - l2sum2, fabs(r__1)) > 1.7f) {
 	    if (! (*hyst)) {
 /*   Ignore if buffer full */
 		if (*osptr <= *oslen) {

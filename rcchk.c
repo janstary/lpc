@@ -1,16 +1,4 @@
-/*
-
- * Revision 1.1  1996/08/19  22:30:41  jaf
- * Initial revision
- *
-
-*/
-
-/*  -- translated by f2c (version 19951025).
-   You must link the resulting object file with the libraries:
-	-lf2c -lm   (in that order)
-*/
-
+#include <math.h>
 #include "f2c.h"
 
 extern int rcchk_(int32_t *order, float *rc1f, float *rc2f);
@@ -70,7 +58,7 @@ extern int rcchk_(int32_t *order, float *rc1f, float *rc2f);
     /* Function Body */
     i__1 = *order;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	if ((r__1 = rc2f[i__], abs(r__1)) > .99f) {
+	if ((r__1 = rc2f[i__], fabs(r__1)) > .99f) {
 	    goto L10;
 	}
     }
