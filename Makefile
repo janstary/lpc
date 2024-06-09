@@ -63,4 +63,4 @@ install: $(LIB) $(INC) $(MAN)
 	install -d $(MANDIR)/man3/ && install -m 0644 $(MAN) $(MANDIR)/man3/
 
 clean:
-	rm -f $(OBJS) *~
+	rm -f $(LIB) $(OBJS) *~
