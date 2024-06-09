@@ -1,0 +1,29 @@
+.Dd June 9, 2024
+.Dt LPC 3
+.Os
+.Sh NAME
+.Nm lpc
+.Nd linear prediction codec
+.Sh SYNOPSIS
+.In lpc.h
+.Pp
+.Ft struct lpc10_encoder_state *
+.Fn create_lpc10_encoder_state "void"
+.Ft void
+.Fn init_lpc10_encoder_state "struct lpc10_encoder_state *st"
+.Ft int
+.Fn lpc10_encode "float *speech" "int32_t *bits" "struct lpc10_encoder_state *st"
+.Ft struct lpc10_decoder_state *
+.Fn create_lpc10_decoder_state "void"
+.Ft void
+.Fn init_lpc10_decoder_state "struct lpc10_decoder_state *st"
+.Ft int
+.Fn lpc10_decode "int32_t *bits" "float *speech" "struct lpc10_decoder_state *st"
+.Sh DESCRIPTION
+The
+.Nm
+library implements the linear prediction codec.
+.Sh AUTHORS
+.An Andy Fingerhut Aq Mt andy.fingerhut@gmail.com
+.Sh CAVEATS
+Obviously, this manpage is a skeleton.
