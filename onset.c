@@ -228,14 +228,14 @@ of */
 		    osbuf[*osptr] = i__ - 9;
 		    ++(*osptr);
 		}
-		*hyst = TRUE_;
+		*hyst = TRUE;
 	    }
 	    *lasti = i__;
 /*       After one onset detection, at least OSHYST sample times m
 ust go */
 /*       by before another is allowed to occur. */
 	} else if ((*hyst) && i__ - *lasti >= 10) {
-	    *hyst = FALSE_;
+	    *hyst = FALSE;
 	}
     }
     return 0;

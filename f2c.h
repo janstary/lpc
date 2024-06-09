@@ -3,8 +3,8 @@
 
 #include "lpc10.h"
 
-#define TRUE_ (1)
-#define FALSE_ (0)
+#define TRUE	1
+#define FALSE	0
 
 #define abs(x) ((x) >= 0 ? (x) : -(x))
 #define min(a,b) ((a) <= (b) ? (a) : (b))

@@ -341,7 +341,7 @@ static int32_t c__2 = 2;
     voice[2] = icorf & 1;
 /*  Skip decoding on first frame because present data not yet available */
     if (*first) {
-	*first = FALSE_;
+	*first = FALSE;
 /*          Assign PITCH a "default" value on the first call, since */
 /*          otherwise it would be left uninitialized.  The two lines 
 */

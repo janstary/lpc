@@ -186,12 +186,12 @@ rd */
 	    awin[(*af << 1) + 2] += *ipitch;
 	}
 /* Make Energy window be phase-synchronous. */
-	ephase = TRUE_;
+	ephase = TRUE;
 /* Case 3 */
     } else {
 	awin[(*af << 1) + 1] = vwin[(*af << 1) + 1];
 	awin[(*af << 1) + 2] = vwin[(*af << 1) + 2];
-	ephase = FALSE_;
+	ephase = FALSE;
     }
 /* RMS is computed over an integer number of pitch periods in the analysis
  */

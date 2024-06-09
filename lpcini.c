@@ -126,7 +126,7 @@ struct {
 /*      common /contrl/ nframe, nunsfm, iclip, maxosp, listl, lincnt */
     contrl_1.order = 10;
     contrl_1.lframe = 180;
-    contrl_1.corrp = TRUE_;
+    contrl_1.corrp = TRUE;
     return 0;
 } /* lpcini_ */
 
@@ -208,7 +208,7 @@ void init_lpc10_encoder_state(struct lpc10_encoder_state *st)
     st->l2ptr1 = 1;
     st->l2ptr2 = 9;
     /* int32_t lasti;     no initial value necessary */
-    st->hyst = FALSE_;
+    st->hyst = FALSE;
 
     /* State used by function voicin */
     st->dither = 20.0f;
@@ -271,7 +271,7 @@ void init_lpc10_decoder_state(struct lpc10_decoder_state *st)
 
     /* State used by function decode */
     st->iptold = 60;
-    st->first = TRUE_;
+    st->first = TRUE;
     st->ivp2h = 0;
     st->iovoic = 0;
     st->iavgp = 60;
@@ -296,7 +296,7 @@ void init_lpc10_decoder_state(struct lpc10_decoder_state *st)
     st->rmso = 1.0f;
     /* rco[10];    no initial value necessary as long as first_pitsyn is initially TRUE_ */
     /* int32_t jsamp;    no initial value necessary as long as first_pitsyn is initially TRUE_ */
-    st->first_pitsyn = TRUE_;
+    st->first_pitsyn = TRUE;
 
     /* State used by function bsynz */
     st->ipo = 0;

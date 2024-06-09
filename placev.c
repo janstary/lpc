@@ -201,11 +201,11 @@ L100:
 	i__1 = osptr1 - 1;
 	for (i__ = q + 1; i__ <= i__1; ++i__) {
 	    if (osbuf[i__] - osbuf[q] >= *minwin) {
-		crit = TRUE_;
+		crit = TRUE;
 		goto L105;
 	    }
 	}
-	crit = FALSE_;
+	crit = FALSE;
 L105:
 /* Computing MAX */
 	i__1 = (*af - 1) * *lframe, i__2 = lrange + *minwin - 1;

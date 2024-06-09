@@ -226,7 +226,7 @@ e */
 	    ipiti[i__] = *pitch;
 	    rmsi[i__] = *rms;
 	}
-	*first = FALSE_;
+	*first = FALSE;
     } else {
 	vflag = 0;
 	lsamp = *lframe + *jsamp;
@@ -372,7 +372,7 @@ to */
 RT */
 /* to LSAMP. */
 
-	while(TRUE_) {
+	while(TRUE) {
 
 /*             JUSED is the total length of all pitch periods curr
 ently */
